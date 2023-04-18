@@ -10,7 +10,8 @@ const communitySchema = new Schema({
     type: String,
   },
   address: {
-    type: String
+    type: String,
+    required: [true, 'Community address is required'],
   },
   facilities: [{
     type: String,
