@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const communitySchema = new Schema({
   name: {
@@ -21,7 +21,18 @@ const communitySchema = new Schema({
     type: String,
   },
 
-}, {timestamps: true})
+}, {
+  timestamps: true,
+  toJSON: {
+    virtuals: true,
+    transform: function (doc, ret) {
+      delete ret.__v;
+      ret.id = ret._id;
+      delete ret._id;
+      return ret;
+    }
+  }
+});
 
 const Community = mongoose.model('Community', communitySchema);
 module.exports = Community;
