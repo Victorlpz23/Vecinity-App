@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "ddf92b93-a38c-48cf-908d-d4d39eab211f",
+		"name": "Vida-Vecinal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26661799"
+	},
+	"item": [
+		{
+			"name": "Communities",
+			"item": [
+				{
+					"name": "Communities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Community",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/643e58b3e2efad92651089af",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"643e58b3e2efad92651089af"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Community",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/643ee3dcb70d596f3408bf08",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"643ee3dcb70d596f3408bf08"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Community",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n        \"name\": \"Arroyohkhjk\",\n        \"manager\": \"Arturo\",\n        \"address\": \"Avenida de madridhjkhjk\",\n        \"facilities\": [\n            \"Piscina\"\n        ],\n        \"imageUrl\": \"kakaka\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Community",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"lalalalalalal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/643e58b3e2efad92651087af",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"643e58b3e2efad92651087af"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_API_URL",
+			"value": "http://localhost:3001/api/v1",
+			"type": "string"
+		}
+	]
+}
