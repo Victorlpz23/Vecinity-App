@@ -24,7 +24,8 @@ const claimSchema = new Schema({
   },
   state: {
     type: String,
-    enum: ["Pending", "Solved"]
+    enum: ["Pending", "Solved"],
+    default: "Pending",
   }
   
 }, {
