@@ -68,3 +68,6 @@ const userSchema = new Schema({
 //   foreignField: "user",
 //   justOne: false,
 // });
+
+const User = mongoose.model('User', userSchema);
+module.exports = User;
