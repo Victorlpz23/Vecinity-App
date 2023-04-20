@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "ddf92b93-a38c-48cf-908d-d4d39eab211f",
-		"name": "Vida-Vecinal",
+		"name": "Vecinity-App",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26661799"
 	},
@@ -69,7 +69,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "  {\n        \"name\": \"Aksakljdjsdk\",\n        \"manager\": \"Arturssado\",\n        \"address\": \"Avenida de madridhjkhjk\",\n        \"facilities\": [\n            \"Piscina\"\n        ],\n        \"imageUrl\": \"kakaka\"\n    }",
+							"raw": "  {\n        \"name\": \"prueba manager\",\n        \"manager\": \"64410e4d44d63ecf24a43be7\",\n        \"address\": \"Avenida de madridhjkhjk\",\n        \"facilities\": [\n            \"Gym\"\n        ]\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -192,7 +192,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "{\n    \"name\": \"manager alex\",\n    \"lastName\":  \"Lopez\",\n    \"home\": \"Debajo de un puente 7\",\n    \"email\": \"exampl@example.org\",\n    \"password\": \"12345678\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -200,13 +200,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_API_URL}}/users/6440315c348d07ea01b3e325",
+							"raw": "{{BASE_API_URL}}/users",
 							"host": [
 								"{{BASE_API_URL}}"
 							],
 							"path": [
-								"users",
-								"6440315c348d07ea01b3e325"
+								"users"
 							]
 						}
 					},
@@ -322,7 +321,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Adfsfsdftofdgdf\",\n    \"description\":  \"Lopez ajjajaaj sksksksks fjaja\"\n}",
+							"raw": "{\n    \"title\": \"Akfkfkff\",\n    \"description\":  \"Lopez ajjajaaj sksksksks fjaja\",\n    \"community\": \"643e774a78f5616f45559905\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"

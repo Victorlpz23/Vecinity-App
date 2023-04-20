@@ -1,1 +1,1 @@
-# Vida Vecinal
+# Vecinity App

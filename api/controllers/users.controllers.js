@@ -1,4 +1,5 @@
 const User = require('../models/user.model');
+const mailer = require('../config/mailer.config');
 
 module.exports.list = (req, res, next) => {
   User.find()
@@ -9,7 +10,10 @@ module.exports.list = (req, res, next) => {
 
 module.exports.create = (req, res, next) => {
   User.create(req.body)
-    .then((user) => res.status(201).json(user))
+    .then((user) => {
+      mailer.sendConfirmationEmail(user);
+      res.status(201).json(user);
+    })
     .catch(next);
 };
 
@@ -18,7 +22,12 @@ module.exports.join = (req, res, next) => {
 };
 
 module.exports.confirm = (req, res, next) => {
-  // TODO
+  req.user.confirm = true;
+
+  req.user
+    .save()
+    .then((user) => res.json(user))
+    .catch(next);
 };
 
 
