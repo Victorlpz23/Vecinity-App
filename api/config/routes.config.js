@@ -28,6 +28,8 @@ router.post('/communities/:id/claims', communitiesMid.exists, claimsControllers.
 router.get('/communities/:id/claims/:claimId', communitiesMid.exists, claimsMid.exists, claimsControllers.detail);
 router.delete('/communities/:id/claims/:claimId', communitiesMid.exists, claimsMid.exists, claimsControllers.delete);
 
+router.post('/login', usersControllers.login);
+
 
 
 
