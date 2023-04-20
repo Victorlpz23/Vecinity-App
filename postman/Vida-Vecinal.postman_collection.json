@@ -32,13 +32,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_API_URL}}/communities/643e58b3e2efad92651089af",
+							"raw": "{{BASE_API_URL}}/communities/643e774a78f5616f45559905",
 							"host": [
 								"{{BASE_API_URL}}"
 							],
 							"path": [
 								"communities",
-								"643e58b3e2efad92651089af"
+								"643e774a78f5616f45559905"
 							]
 						}
 					},
@@ -50,13 +50,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_API_URL}}/communities/643ee3dcb70d596f3408bf08",
+							"raw": "{{BASE_API_URL}}/communities/643e58b3e2efad92651087af",
 							"host": [
 								"{{BASE_API_URL}}"
 							],
 							"path": [
 								"communities",
-								"643ee3dcb70d596f3408bf08"
+								"643e58b3e2efad92651087af"
 							]
 						}
 					},
@@ -69,7 +69,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "  {\n        \"name\": \"Arroyohkhjk\",\n        \"manager\": \"Arturo\",\n        \"address\": \"Avenida de madridhjkhjk\",\n        \"facilities\": [\n            \"Piscina\"\n        ],\n        \"imageUrl\": \"kakaka\"\n    }",
+							"raw": "  {\n        \"name\": \"Aksakljdjsdk\",\n        \"manager\": \"Arturssado\",\n        \"address\": \"Avenida de madridhjkhjk\",\n        \"facilities\": [\n            \"Piscina\"\n        ],\n        \"imageUrl\": \"kakaka\"\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -95,6 +95,130 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
+							"raw": "{\n    \"name\": \"ogogog\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/643e774a78f5616f45559905",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"643e774a78f5616f45559905"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/users",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/users/6440315c348d07ea01b3e325",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"users",
+								"6440315c348d07ea01b3e325"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/users/6440319b348d07ea01b3e327",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"users",
+								"6440319b348d07ea01b3e327"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/users/6440315c348d07ea01b3e325",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"users",
+								"6440315c348d07ea01b3e325"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
 							"raw": "{\n    \"name\": \"lalalalalalal\"\n}",
 							"options": {
 								"raw": {
@@ -103,13 +227,117 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_API_URL}}/communities/643e58b3e2efad92651087af",
+							"raw": "{{BASE_API_URL}}/users/6440315c348d07ea01b3e325",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"users",
+								"6440315c348d07ea01b3e325"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Claims",
+			"item": [
+				{
+					"name": "Claims",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/643fa0b11c11209b0f2a82e0/claims",
 							"host": [
 								"{{BASE_API_URL}}"
 							],
 							"path": [
 								"communities",
-								"643e58b3e2efad92651087af"
+								"643fa0b11c11209b0f2a82e0",
+								"claims"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Claim",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/643fa0b11c11209b0f2a82e0/claims/64403d51cb9fb4c8dcf3e81e",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"643fa0b11c11209b0f2a82e0",
+								"claims",
+								"64403d51cb9fb4c8dcf3e81e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Claim",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/643fa0b11c11209b0f2a82e0/claims/64403d51cb9fb4c8dcf3e81e",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"643fa0b11c11209b0f2a82e0",
+								"claims",
+								"64403d51cb9fb4c8dcf3e81e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Claim",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Adfsfsdftofdgdf\",\n    \"description\":  \"Lopez ajjajaaj sksksksks fjaja\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/643fa0b11c11209b0f2a82e0/claims",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"643fa0b11c11209b0f2a82e0",
+								"claims"
 							]
 						}
 					},

@@ -6,6 +6,9 @@ const createError = require('http-errors');
 module.exports.exists = (req, res, next) => {
   const communityId = req.params.communityId || req.params.id 
   Community.findById(communityId)
+    .populate('claims')
+    .populate('neighbours')
+    .populate('manager')
     .then((community) => {
       if (community) {
         req.community = community;

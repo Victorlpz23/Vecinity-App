@@ -10,10 +10,6 @@ const communitySchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   },
-  neighbours: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-  }],
   address: {
     type: String,
     required: [true, 'Community address is required'],
@@ -41,12 +37,19 @@ const communitySchema = new Schema({
   }
 });
 
-// communitySchema.virtual("claims", {
-//   ref: "Claim",
-//   localField: "_id",
-//   foreignField: "community",
-//   justOne: false,
-// });
+communitySchema.virtual("claims", {
+  ref: "Claim",
+  localField: "_id",
+  foreignField: "community",
+  justOne: false,
+});
+
+communitySchema.virtual("neighbours", {
+  ref: "User",
+  localField: "_id",
+  foreignField: "community",
+  justOne: false,
+});
 
 
 const Community = mongoose.model('Community', communitySchema);

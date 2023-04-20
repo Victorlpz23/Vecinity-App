@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const bcrypt = require('bcryptjs');
 
 const userSchema = new Schema({
   name: {
@@ -16,13 +17,13 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  phoneNumber : {
+  phoneNumber: {
     type: Number,
   },
   email: {
     type: String,
     required: "Email is required",
-    unique: true,
+    unique: "Email already exists",
     match: [/^\S+@\S+\.\S+$/, "Email must be valid"]
   },
   confirm: {
@@ -45,8 +46,8 @@ const userSchema = new Schema({
     default: "https://www.iprcenter.gov/image-repository/blank-profile-picture.png/@@images/image.png"
   },
   community: {
-    type: String,
-    required: true,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Community',
   },
 }, {
   timestamps: true,
@@ -56,18 +57,36 @@ const userSchema = new Schema({
       delete ret.__v;
       ret.id = ret._id;
       delete ret._id;
+      delete ret.password;
       return ret;
     }
   }
 });
 
+userSchema.pre('save', function (next) {
+  const user = this;
 
-// communitySchema.virtual("claims", {
-//   ref: "Claim",
-//   localField: "_id",
-//   foreignField: "user",
-//   justOne: false,
-// });
+  if (user.isModified('password')) {
+    bcrypt
+      .genSalt(10)
+      .then((salt) => {
+        return bcrypt.hash(user.password, salt).then((hash) => {
+          user.password = hash;
+          next();
+        });
+      })
+      .catch((error) => next(error));
+  } else {
+    next();
+  }
+});
+
+userSchema.virtual("claims", {
+  ref: "Claim",
+  localField: "_id",
+  foreignField: "user",
+  justOne: false,
+});
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
