@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const contactSchema = new Schema({
-  name: {
+const forumTopicSchema = new Schema({
+  title: {
     type: String,
     required: true,
     minlength: [2, "Title needs at least 2 chars"],
-    maxlength: [20, "Title max 20 chars"],
+    maxlength: [20, "Claim title max 20 chars"],
   },
   description: {
     type: String,
@@ -14,17 +14,11 @@ const contactSchema = new Schema({
     minlength: [20, "Description needs at least 20 chars"],
     maxlength: [140, "Description max 140 chars"],
   },
-  phoneNumber: {
-    type: Number,
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
   },
-  email: {
-    type: String,
-    match: [/^\S+@\S+\.\S+$/, "Email must be valid"]
-  },
-  contactUrl: {
-    type: String,
-    match: [/^https?:\/\/.+\.(jpg|jpeg|png)$/, "Image URL must be valid"],
-  },
+
   
 }, {
   timestamps: true,
@@ -39,5 +33,5 @@ const contactSchema = new Schema({
   }
 });
 
-const Contact = mongoose.model('Contact', contactSchema);
-module.exports = Contact;
+const ForumTopic = mongoose.model('ForumTopic', forumTopicSchema);
+module.exports = ForumTopic;

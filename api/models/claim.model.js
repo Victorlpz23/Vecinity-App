@@ -5,14 +5,14 @@ const claimSchema = new Schema({
   title: {
     type: String,
     required: true,
-    minlength: [2, "Claim title needs at least 2 chars"],
-    maxlength: [20, "Claim title max 20 chars"],
+    minlength: [2, "Title needs at least 2 chars"],
+    maxlength: [20, "Title max 20 chars"],
   },
   description: {
     type: String,
     required: true,
-    minlength: [20, "Claim description needs at least 20 chars"],
-    maxlength: [140, "Claim description max 140 chars"],
+    minlength: [20, "Description needs at least 20 chars"],
+    maxlength: [140, "Description max 140 chars"],
   },
   community: {
     type: mongoose.Schema.Types.ObjectId,

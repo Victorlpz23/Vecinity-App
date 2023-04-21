@@ -15,8 +15,8 @@ const eventSchema = new Schema({
   description: {
     type: String,
     required: true,
-    minlength: [20, "Claim description needs at least 20 chars"],
-    maxlength: [140, "Claim description max 140 chars"],
+    minlength: [20, "Description needs at least 20 chars"],
+    maxlength: [140, "Description max 140 chars"],
   },
 }, {
   timestamps: true,
