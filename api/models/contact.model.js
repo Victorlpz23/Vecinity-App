@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const claimSchema = new Schema({
-  title: {
+const contactSchema = new Schema({
+  name: {
     type: String,
     required: true,
     minlength: [2, "Claim title needs at least 2 chars"],
@@ -14,19 +14,17 @@ const claimSchema = new Schema({
     minlength: [20, "Claim description needs at least 20 chars"],
     maxlength: [140, "Claim description max 140 chars"],
   },
-  community: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Community',
+  phoneNumber: {
+    type: Number,
   },
-  author: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-  },
-  state: {
+  email: {
     type: String,
-    enum: ["Pending", "Solved"],
-    default: "Pending",
-  }
+    match: [/^\S+@\S+\.\S+$/, "Email must be valid"]
+  },
+  contactUrl: {
+    type: String,
+    match: [/^https?:\/\/.+\.(jpg|jpeg|png)$/, "Image URL must be valid"],
+  },
   
 }, {
   timestamps: true,
@@ -41,6 +39,5 @@ const claimSchema = new Schema({
   }
 });
 
-const Claim = mongoose.model('Claim', claimSchema);
-module.exports = Claim;
-
+const Contact = mongoose.model('Contact', contactSchema);
+module.exports = Contact;

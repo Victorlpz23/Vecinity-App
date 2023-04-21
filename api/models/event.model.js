@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const claimSchema = new Schema({
+const eventSchema = new Schema({
   title: {
     type: String,
     required: true,
-    minlength: [2, "Claim title needs at least 2 chars"],
-    maxlength: [20, "Claim title max 20 chars"],
+  },
+  date: {
+    day: {
+      type: Date,
+      required: true,
+    }
   },
   description: {
     type: String,
@@ -14,20 +18,6 @@ const claimSchema = new Schema({
     minlength: [20, "Claim description needs at least 20 chars"],
     maxlength: [140, "Claim description max 140 chars"],
   },
-  community: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Community',
-  },
-  author: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-  },
-  state: {
-    type: String,
-    enum: ["Pending", "Solved"],
-    default: "Pending",
-  }
-  
 }, {
   timestamps: true,
   toJSON: {
@@ -41,6 +31,5 @@ const claimSchema = new Schema({
   }
 });
 
-const Claim = mongoose.model('Claim', claimSchema);
-module.exports = Claim;
-
+const Event = mongoose.model('Event', eventSchema);
+module.exports = Event;
