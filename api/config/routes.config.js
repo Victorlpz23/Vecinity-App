@@ -7,6 +7,7 @@ const usersControllers = require('../controllers/users.controllers');
 const claimsControllers = require('../controllers/claims.controllers');
 const eventsControllers = require('../controllers/events.controllers');
 const forumTopicsControllers = require('../controllers/forumTopics.controllers');
+const forumCommentsControllers = require('../controllers/forumComments.controllers');
 const reservationsControllers = require('../controllers/reservations.controllers');
 
 // Middlewares
@@ -16,6 +17,7 @@ const claimsMid = require('../middlewares/claims.mid');
 const secure = require('../middlewares/secure.mid');
 const eventsMid = require('../middlewares/events.mid');
 const forumTopicsMid = require('../middlewares/forumTopics.mid');
+const forumCommentsMid = require('../middlewares/forumComments.mid');
 const reservationsMid = require('../middlewares/reservations.mid');
 
 // Communities
@@ -68,11 +70,18 @@ router.get('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitie
 router.patch('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.update);
 router.delete('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.delete);
 
+// Forum comments
+router.get('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists, forumCommentsControllers.list);
+router.post('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists,  forumCommentsControllers.create);
+router.delete('/communities/:id/forumTopics/:forumTopicId/forumComments/:forumCommentId', secure.auth, communitiesMid.exists, forumCommentsMid.exists, forumCommentsControllers.delete);
+
+
 // Reservations
 router.get("/communities/:id/reservations", secure.auth, communitiesMid.exists, reservationsControllers.list);
 router.get("/communities/:id/reservations/:reservationId", secure.auth, communitiesMid.exists, reservationsMid.exists, reservationsControllers.detail);
 router.post("/communities/:id/reservations", secure.auth, communitiesMid.exists, reservationsControllers.create);
 router.delete("/communities/:id/reservations/:reservationId", secure.auth, communitiesMid.exists, reservationsMid.exists, reservationsControllers.delete);
+
 
 
 
