@@ -2,6 +2,7 @@ const User = require('../models/user.model');
 const mailer = require('../config/mailer.config');
 const createError = require('http-errors');
 const jwt = require('jsonwebtoken');
+const Community = require('../models/community.model');
 
 module.exports.list = (req, res, next) => {
   User.find()
@@ -11,13 +12,22 @@ module.exports.list = (req, res, next) => {
 
 
 module.exports.create = (req, res, next) => {
-  User.create(req.body)
+  Community.findOne({ code: req.body.code })
+    .then((community) => {
+      delete req.body.code;
+      if (community) {
+        req.body.community = community.id;
+      }
+      return User.create(req.body);
+    })
     .then((user) => {
-      mailer.sendConfirmationEmail(user);
+      // mailer.sendConfirmationEmail(user);
       res.status(201).json(user);
     })
     .catch(next);
 };
+
+
 
 module.exports.join = (req, res, next) => {
   // TODO
@@ -40,7 +50,7 @@ module.exports.detail = (req, res, next) => res.json(req.user);
 
 module.exports.update = (req, res, next) => {
   if (req.user.id !== req.params.id) {
-    return next(createError(403, "Forbidden"))
+    return next(createError(403, "Forbidden"));
   }
 
   Object.assign(req.user, req.body);
@@ -53,7 +63,7 @@ module.exports.update = (req, res, next) => {
 
 module.exports.delete = (req, res, next) => {
   if (req.user.id !== req.params.id) {
-    return next(createError(403, "Forbidden"))
+    return next(createError(403, "Forbidden"));
   }
 
   User.deleteOne({ _id: req.user.id })
@@ -79,7 +89,7 @@ module.exports.login = (req, res, next) => {
             return next(createError(401, "Invalid credentials"));
           }
 
-          const token = jwt.sign({ sub: user.id, exp: Date.now() / 1000 + 3_600 }, process.env.JWT_SECRET)
+          const token = jwt.sign({ sub: user.id, exp: Date.now() / 1000 + 3_600 }, process.env.JWT_SECRET);
           res.json({ token });
         });
     })

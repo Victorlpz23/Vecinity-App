@@ -23,6 +23,9 @@ const communitySchema = new Schema({
     type: String,
     match: [/^https?:\/\/.+\.(jpg|jpeg|png)$/, "Image URL must be valid"],
   },
+  code: {
+    type: String
+  },
 
 }, {
   timestamps: true,

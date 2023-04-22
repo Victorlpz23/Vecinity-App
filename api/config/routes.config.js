@@ -6,6 +6,7 @@ const communitiesControllers = require('../controllers/communities.controllers')
 const usersControllers = require('../controllers/users.controllers');
 const claimsControllers = require('../controllers/claims.controllers');
 const eventsControllers = require('../controllers/events.controllers');
+const forumTopicsControllers = require('../controllers/forumTopics.controllers');
 
 // Middlewares
 const communitiesMid = require('../middlewares/communities.mid');
@@ -13,6 +14,7 @@ const usersMid = require('../middlewares/users.mid');
 const claimsMid = require('../middlewares/claims.mid');
 const secure = require('../middlewares/secure.mid');
 const eventsMid = require('../middlewares/events.mid');
+const forumTopicsMid = require('../middlewares/forumTopics.mid');
 
 // Communities
 router.get('/communities', communitiesControllers.list);
@@ -56,6 +58,13 @@ router.delete('/communities/:id/claims/:claimId', secure.auth, communitiesMid.ex
 // router.get('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsController.detail);
 // router.patch('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsController.update);
 // router.delete('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsController.delete);
+
+// Forum Topic
+router.get('/communities/:id/forumTopics', secure.auth, communitiesMid.exists, forumTopicsControllers.list);
+router.post('/communities/:id/forumTopics', secure.auth, communitiesMid.exists,  forumTopicsControllers.create);
+router.get('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.detail);
+router.patch('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.update);
+router.delete('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.delete);
 
 
 

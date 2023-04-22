@@ -49,6 +49,10 @@ const userSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Community',
   },
+  code: {
+    type: String
+  },
+
 }, {
   timestamps: true,
   toJSON: {
