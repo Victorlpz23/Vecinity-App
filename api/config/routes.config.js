@@ -7,6 +7,7 @@ const usersControllers = require('../controllers/users.controllers');
 const claimsControllers = require('../controllers/claims.controllers');
 const eventsControllers = require('../controllers/events.controllers');
 const forumTopicsControllers = require('../controllers/forumTopics.controllers');
+const reservationsControllers = require('../controllers/reservations.controllers');
 
 // Middlewares
 const communitiesMid = require('../middlewares/communities.mid');
@@ -15,6 +16,7 @@ const claimsMid = require('../middlewares/claims.mid');
 const secure = require('../middlewares/secure.mid');
 const eventsMid = require('../middlewares/events.mid');
 const forumTopicsMid = require('../middlewares/forumTopics.mid');
+const reservationsMid = require('../middlewares/reservations.mid');
 
 // Communities
 router.get('/communities', communitiesControllers.list);
@@ -66,7 +68,11 @@ router.get('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitie
 router.patch('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.update);
 router.delete('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.delete);
 
-
+// Reservations
+router.get("/communities/:id/reservations", secure.auth, communitiesMid.exists, reservationsControllers.list);
+router.get("/communities/:id/reservations/:reservationId", secure.auth, communitiesMid.exists, reservationsMid.exists, reservationsControllers.detail);
+router.post("/communities/:id/reservations", secure.auth, communitiesMid.exists, reservationsControllers.create);
+router.delete("/communities/:id/reservations/:reservationId", secure.auth, communitiesMid.exists, reservationsMid.exists, reservationsControllers.delete);
 
 
 
