@@ -5,12 +5,14 @@ const router = express.Router();
 const communitiesControllers = require('../controllers/communities.controllers');
 const usersControllers = require('../controllers/users.controllers');
 const claimsControllers = require('../controllers/claims.controllers');
+const eventsControllers = require('../controllers/events.controllers');
 
 // Middlewares
 const communitiesMid = require('../middlewares/communities.mid');
 const usersMid = require('../middlewares/users.mid');
 const claimsMid = require('../middlewares/claims.mid');
 const secure = require('../middlewares/secure.mid');
+const eventsMid = require('../middlewares/events.mid');
 
 // Communities
 router.get('/communities', communitiesControllers.list);
@@ -32,6 +34,14 @@ router.delete('/users/:id', secure.auth, usersControllers.delete);
 router.post('/login', usersControllers.login);
 
 
+// Event
+router.get('/communities/:id/events', secure.auth, communitiesMid.exists, eventsControllers.list);
+router.post('/communities/:id/events', secure.auth, communitiesMid.exists,  eventsControllers.create);
+router.get('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, eventsControllers.detail);
+router.patch('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, eventsControllers.update);
+router.delete('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, eventsControllers.delete);
+
+
 
 // Claims
 router.get('/communities/:id/claims', communitiesMid.exists, claimsControllers.list);
@@ -39,6 +49,13 @@ router.post('/communities/:id/claims', secure.auth, communitiesMid.exists, claim
 router.get('/communities/:id/claims/:claimId', secure.auth, communitiesMid.exists, claimsMid.exists, claimsControllers.detail);
 // todo patch for the manager
 router.delete('/communities/:id/claims/:claimId', secure.auth, communitiesMid.exists, claimsMid.exists, claimsMid.checkAuthor, claimsControllers.delete);
+
+// //Contacts
+// router.get('/communities/:id/contacts', contactsMid.exists, contactsController.list);
+// router.post('/communities/:id/contacts', secure.auth, contactsController.create);
+// router.get('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsController.detail);
+// router.patch('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsController.update);
+// router.delete('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsController.delete);
 
 
 

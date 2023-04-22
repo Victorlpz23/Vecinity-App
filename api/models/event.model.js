@@ -7,16 +7,18 @@ const eventSchema = new Schema({
     required: true,
   },
   date: {
-    day: {
-      type: Date,
+      type: String,
       required: true,
-    }
   },
   description: {
     type: String,
     required: true,
     minlength: [20, "Description needs at least 20 chars"],
     maxlength: [140, "Description max 140 chars"],
+  },
+  community: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Community',
   },
 }, {
   timestamps: true,

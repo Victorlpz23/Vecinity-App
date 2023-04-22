@@ -15,6 +15,10 @@ const forumCommentSchema = new Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    community: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Community',
+    },
   },
   {
     timestamps: true,

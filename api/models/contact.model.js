@@ -25,6 +25,11 @@ const contactSchema = new Schema({
     type: String,
     match: [/^https?:\/\/.+\.(jpg|jpeg|png)$/, "Image URL must be valid"],
   },
+  community: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Community',
+  },
+  
   
 }, {
   timestamps: true,

@@ -13,9 +13,13 @@ const reservationSchema = new Schema({
       enum: ["10h-13h", "13h-16h", "16h-19h", "19h-22h"]
     }
   },
-  neighbour: {
+  author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
+  },
+  community: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Community',
   },
  
 }, {
