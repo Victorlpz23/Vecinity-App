@@ -21,17 +21,23 @@ module.exports.create = (req, res, next) => {
       return User.create(req.body);
     })
     .then((user) => {
-      // mailer.sendConfirmationEmail(user);
+      mailer.sendConfirmationEmail(user);
       res.status(201).json(user);
     })
     .catch(next);
 };
 
-
-
-module.exports.join = (req, res, next) => {
-  // TODO
+module.exports.createManager = (req, res, next) => {
+  User.create(req.body)
+    .then((user) => {
+    mailer.sendManagerEmail(user);
+    res.status(201).json(user)
+  })
+    .catch(next);
 };
+
+
+
 
 module.exports.confirm = (req, res, next) => {
   req.user.confirm = true;
