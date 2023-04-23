@@ -27,6 +27,25 @@
 					"response": []
 				},
 				{
+					"name": "Community Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/644576a5f2048bf5caac56a8/neighbours",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"644576a5f2048bf5caac56a8",
+								"neighbours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Community",
 					"request": {
 						"method": "GET",
@@ -57,13 +76,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIxNjUwNDIuMjY2LCJpYXQiOjE2ODIxNjE0NDJ9.FDc-YuZjbXnFeNisGO_dSgZl9RvyXjUW-Okiz-11WFE",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQ1NzVmODc1YmI1NmJhMmUwNzE0YjgiLCJleHAiOjE2ODIyNzc1NDAuMzc4LCJpYXQiOjE2ODIyNzM5NDB9.2hVAs9XRav-NL3KTdcHZ8DQ8csOn9KD4Iq4F3-dAxSs",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "  {\n        \"name\": \"code 2\",\n        \"address\": \"Avenida de madridhjkhjk\",\n        \"facilities\": [\n            \"Gym\"\n        ]\n    }",
+							"raw": "  {\n        \"name\": \"Arroyo\",\n        \"address\": \"Avenida de madridhjkhjk\",\n        \"facilities\": [\n            \"Gym\"\n        ],\n        \"manager\": \"644575f875bb56ba2e0714b8\"\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -107,13 +126,14 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIxNjUwNDIuMjY2LCJpYXQiOjE2ODIxNjE0NDJ9.FDc-YuZjbXnFeNisGO_dSgZl9RvyXjUW-Okiz-11WFE",
-								"type": "text"
+								"value": "",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"hola manola\"\n}",
+							"raw": "{\n    \"name\": \"hola lalala\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -121,13 +141,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_API_URL}}/communities/6443b5de36184f6ced7cd693",
+							"raw": "{{BASE_API_URL}}/communities/644576a5f2048bf5caac56a8",
 							"host": [
 								"{{BASE_API_URL}}"
 							],
 							"path": [
 								"communities",
-								"6443b5de36184f6ced7cd693"
+								"644576a5f2048bf5caac56a8"
 							]
 						}
 					},
@@ -233,7 +253,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"victorlpz2301@gmail.com\",\n    \"password\": \"12345678\"\n}",
+							"raw": "{\n    \"email\": \"victorl1@gmail.com\",\n    \"password\": \"12345678\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -326,7 +346,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"manager alex\",\n    \"lastName\":  \"Lopez\",\n    \"home\": \"Debajo de un puente 7\",\n    \"email\": \"victyuytutyfgjhkkhjg@gmail.com\",\n    \"password\": \"12345678\",\n    \"code\": \"0.idiy\"\n}",
+							"raw": "{\n    \"name\": \"vecino arroyo\",\n    \"lastName\":  \"Lopez\",\n    \"home\": \"Debajo de un puente 7\",\n    \"email\": \"vicg@gmail.com\",\n    \"password\": \"12345678\",\n    \"code\": \"0.jjpq\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -340,6 +360,33 @@
 							],
 							"path": [
 								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Manager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Victor\",\n    \"lastName\":  \"Lopez\",\n    \"home\": \"Debajo de un puente 7\",\n    \"email\": \"victorl1@gmail.com\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/users/manager",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"users",
+								"manager"
 							]
 						}
 					},
@@ -566,15 +613,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{BASE_API_URL}}/communities/643fa0b11c11209b0f2a82e0/claims/64403d51cb9fb4c8dcf3e81e",
+							"raw": "{{BASE_API_URL}}/communities/644171563236d93c404356b8/reservations/6443d0583a774c52882a566a",
 							"host": [
 								"{{BASE_API_URL}}"
 							],
 							"path": [
 								"communities",
-								"643fa0b11c11209b0f2a82e0",
-								"claims",
-								"64403d51cb9fb4c8dcf3e81e"
+								"644171563236d93c404356b8",
+								"reservations",
+								"6443d0583a774c52882a566a"
 							]
 						}
 					},
@@ -593,7 +640,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"facility\":  \"padel\"\n}",
+							"raw": "{\n    \"facility\":  \"manolo\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -657,7 +704,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{token}}",
+									"value": "",
 									"type": "string"
 								}
 							]
@@ -666,7 +713,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIxNTY0MTQuODMzLCJpYXQiOjE2ODIxNTI4MTR9.yTHiABzycLItRLtiEAJwek2PL6GwFiHXG8I71wcTsX0",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIyNzM4NTkuMTEyLCJpYXQiOjE2ODIyNzAyNTl9.xUfsNg7M6Hhl3WRT_0ovlPUmGX1AaEbUwpL78gPKSMU",
 								"type": "text"
 							}
 						],
@@ -771,7 +818,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"holaafgdf\",\n    \"date\":  \"1987-09-28\",\n    \"description\": \"644171563236d93c404356b8\"\n}",
+							"raw": "{\n    \"title\": \"holaafgdsfsddf\",\n    \"date\":  \"1987-09-28\",\n    \"description\": \"644171563236d93c404356b8\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -791,6 +838,218 @@
 						}
 					},
 					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Contacts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/644171563236d93c404356b8/contacts",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"644171563236d93c404356b8",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/644171563236d93c404356b8/contacts/64456981d1bdf58a20bc5a0a",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"644171563236d93c404356b8",
+								"contacts",
+								"64456981d1bdf58a20bc5a0a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/644171563236d93c404356b8/contacts/64456981d1bdf58a20bc5a0a",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"644171563236d93c404356b8",
+								"contacts",
+								"64456981d1bdf58a20bc5a0a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"fontaneroyyp`ptyt\",\n    \"description\": \"mu weno hace las cosas genial\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_API_URL}}/communities/644171563236d93c404356b8/contacts",
+							"host": [
+								"{{BASE_API_URL}}"
+							],
+							"path": [
+								"communities",
+								"644171563236d93c404356b8",
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIyNzM4NTkuMTEyLCJpYXQiOjE2ODIyNzAyNTl9.xUfsNg7M6Hhl3WRT_0ovlPUmGX1AaEbUwpL78gPKSMU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
@@ -817,7 +1076,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIxNTk5MTQuMjYxLCJpYXQiOjE2ODIxNTYzMTR9.UQJLKwDcnnpFELmb6KfEI9fcJGn6y3F13RgH3jk8jsg",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIxNzA0OTMuMDY0LCJpYXQiOjE2ODIxNjY4OTN9.xL9GJqwX-AeeE3hbdTfACj7tcqPNKJE9rO0ow3cjlkg",
 								"type": "text"
 							}
 						],
@@ -959,7 +1218,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIxNTY0MTQuODMzLCJpYXQiOjE2ODIxNTI4MTR9.yTHiABzycLItRLtiEAJwek2PL6GwFiHXG8I71wcTsX0",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIxNzA0OTMuMDY0LCJpYXQiOjE2ODIxNjY4OTN9.xL9GJqwX-AeeE3hbdTfACj7tcqPNKJE9rO0ow3cjlkg",
 						"type": "string"
 					}
 				]
@@ -1049,7 +1308,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{BASE_API_URL}}/communities/644171563236d93c404356b8/forumTopics/6443af2064a10da158365ed6",
+							"raw": "{{BASE_API_URL}}/communities/644171563236d93c404356b8/forumTopics/6443ac2e851bfc000cc74854/forumComments/6443d551319976a6b4964d9c",
 							"host": [
 								"{{BASE_API_URL}}"
 							],
@@ -1057,7 +1316,9 @@
 								"communities",
 								"644171563236d93c404356b8",
 								"forumTopics",
-								"6443af2064a10da158365ed6"
+								"6443ac2e851bfc000cc74854",
+								"forumComments",
+								"6443d551319976a6b4964d9c"
 							]
 						}
 					},
@@ -1079,15 +1340,14 @@
 						"method": "POST",
 						"header": [
 							{
-								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
 								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIxNTk5MTQuMjYxLCJpYXQiOjE2ODIxNTYzMTR9.UQJLKwDcnnpFELmb6KfEI9fcJGn6y3F13RgH3jk8jsg",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIxNzA0OTMuMDY0LCJpYXQiOjE2ODIxNjY4OTN9.xL9GJqwX-AeeE3hbdTfACj7tcqPNKJE9rO0ow3cjlkg",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Akfkfkfewrwewerf\",\n    \"description\":  \"Lopez ajjajaaj sksksksks fjaja\"\n}",
+							"raw": "{\n    \"text\": \"lololo\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1095,14 +1355,16 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE_API_URL}}/communities/644171563236d93c404356b8/forumTopics",
+							"raw": "{{BASE_API_URL}}/communities/644171563236d93c404356b8/forumTopics/6443ac2e851bfc000cc74854/forumComments",
 							"host": [
 								"{{BASE_API_URL}}"
 							],
 							"path": [
 								"communities",
 								"644171563236d93c404356b8",
-								"forumTopics"
+								"forumTopics",
+								"6443ac2e851bfc000cc74854",
+								"forumComments"
 							]
 						}
 					},
@@ -1114,7 +1376,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIxNzA0OTMuMDY0LCJpYXQiOjE2ODIxNjY4OTN9.xL9GJqwX-AeeE3hbdTfACj7tcqPNKJE9rO0ow3cjlkg",
+						"value": "",
 						"type": "string"
 					}
 				]
@@ -1146,7 +1408,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQxODQ5NTkzMDlkZjBjM2JjYjRiMjYiLCJleHAiOjE2ODIxNjkwNTQuODYxLCJpYXQiOjE2ODIxNjU0NTR9.lIwgSe2vdUyyuwzdx6EIpNPrSW_9FWg33T5Ow3dLTFU",
+				"value": "",
 				"type": "string"
 			}
 		]
