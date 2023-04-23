@@ -1,5 +1,6 @@
 const Community = require('../models/community.model');
 
+
 module.exports.list = (req, res, next) => {
   Community.find()
     .populate('claims')
@@ -9,13 +10,22 @@ module.exports.list = (req, res, next) => {
     .catch(next);
 };
 
+module.exports.usersList = (req, res, next) => {
+  Community.findById(req.params.id)
+    .populate('neighbours')
+    .then((community) => {
+      res.json(community.neighbours)
+    })
+    .catch(next);
+};
+
 
 
 module.exports.create = (req, res, next) => {
-  let code = Math.random().toString(36).substring(0, 6);       
+  let code = Math.random().toString(36).substring(0, 6);
 
   req.body.manager = req.user.id;
-  req.body.code = code
+  req.body.code = code;
   Community.create(req.body)
     .then((community) => res.status(201).json(community))
     .catch(next);

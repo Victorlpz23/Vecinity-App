@@ -1,6 +1,7 @@
 const User = require('../models/user.model');
 const createError = require('http-errors');
 const jwt = require('jsonwebtoken');
+const Community = require('../models/community.model');
 
 
 module.exports.removeId = (req, res, next) => {
@@ -36,4 +37,29 @@ module.exports.auth = (req, res, next) => {
   } catch (err) {
     next(createError(401, "Invalid token"));
   }
+};
+
+
+
+// Middleware to know the role of the user
+module.exports.checkRole = (role) => {
+  return (req, res, next) => {
+    if (req.user?.role === role) {
+      next();
+    } else {
+      res.redirect('/');
+    }
+  };
+};
+
+
+module.exports.isManager = (req, res, next) => {
+  Community.findById(req.params.id)
+    .then((community) => {
+      if (req.user?.id === community.manager?.toString()) {
+        next();
+      } else {
+        next(createError(403, "Forbidden"))
+      }
+    }).catch(next);
 };

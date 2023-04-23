@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcryptjs');
 
+// Creating emails for admins
+const ADMIN_USERS = (process.env.ADMIN_USERS || 'admin@example.org')
+  .split(',')
+  .map(email => email.trim())
+
 const userSchema = new Schema({
   name: {
     type: String,

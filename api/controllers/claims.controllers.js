@@ -18,6 +18,14 @@ module.exports.create = (req, res, next) => {
 module.exports.detail = (req, res, next) => res.json(req.claim);
 
 
+module.exports.update = (req, res, next) => {
+  Object.assign(req.claim, req.body);
+  req.claim.save()
+    .then((claim) => res.json(claim))
+    .catch(next);
+};
+
+
 module.exports.delete = (req, res, next) => {
   Claim.deleteOne({ _id: req.claim.id })
     .then(() => res.status(204).send())

@@ -24,14 +24,17 @@ const contactsMid = require('../middlewares/contacts.mid');
 
 // Communities
 router.get('/communities', communitiesControllers.list);
+// secure.checkRole('admin')
+router.get('/communities/:id/neighbours', secure.isManager, communitiesControllers.usersList);
 router.post('/communities', secure.auth, communitiesControllers.create);
-// router.post('/communities/:id/join', communitiesControllers.join)
 router.get('/communities/:id', communitiesMid.exists, communitiesControllers.detail);
-router.patch('/communities/:id', secure.auth, communitiesMid.exists, communitiesMid.checkManager, communitiesControllers.update);
+router.patch('/communities/:id', secure.auth, secure.isManager, communitiesMid.exists, communitiesMid.checkManager, communitiesControllers.update);
 router.delete('/communities/:id', secure.auth, communitiesMid.exists, communitiesMid.checkManager, communitiesControllers.delete);
+// secure.checkRole('admin')
 
 // Users
 router.get('/users', usersControllers.list);
+// secure.checkRole('admin')
 router.post('/users', usersControllers.create);
 router.post('/users/manager', usersControllers.createManager);
 router.get('/users/:id', usersMid.exists, usersControllers.detail);
@@ -45,18 +48,19 @@ router.post('/login', usersControllers.login);
 
 // Event
 router.get('/communities/:id/events', secure.auth, communitiesMid.exists, eventsControllers.list);
-router.post('/communities/:id/events', secure.auth, communitiesMid.exists,  eventsControllers.create);
+router.post('/communities/:id/events', secure.auth, secure.isManager, communitiesMid.exists,  eventsControllers.create);
 router.get('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, eventsControllers.detail);
-router.patch('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, eventsControllers.update);
-router.delete('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, eventsControllers.delete);
+router.patch('/communities/:id/events/:eventId', secure.auth, secure.isManager, communitiesMid.exists, eventsMid.exists, eventsControllers.update);
+router.delete('/communities/:id/events/:eventId', secure.auth, secure.isManager, communitiesMid.exists, eventsMid.exists, eventsControllers.delete);
 
 
 // Claims
 router.get('/communities/:id/claims', communitiesMid.exists, claimsControllers.list);
 router.post('/communities/:id/claims', secure.auth, communitiesMid.exists, claimsControllers.create);
 router.get('/communities/:id/claims/:claimId', secure.auth, communitiesMid.exists, claimsMid.exists, claimsControllers.detail);
+router.patch('/communities/:id/claims/:claimId', secure.auth, secure.isManager, communitiesMid.exists, claimsMid.exists, claimsControllers.update);
 // todo patch for the manager
-router.delete('/communities/:id/claims/:claimId', secure.auth, communitiesMid.exists, claimsMid.exists, claimsMid.checkAuthor, claimsControllers.delete);
+router.delete('/communities/:id/claims/:claimId', secure.auth, secure.isManager, communitiesMid.exists, claimsMid.exists, claimsMid.checkAuthor, claimsControllers.delete);
 
 
 // Forum Topic
@@ -76,14 +80,14 @@ router.delete('/communities/:id/forumTopics/:forumTopicId/forumComments/:forumCo
 router.get("/communities/:id/reservations", secure.auth, communitiesMid.exists, reservationsControllers.list);
 router.get("/communities/:id/reservations/:reservationId", secure.auth, communitiesMid.exists, reservationsMid.exists, reservationsControllers.detail);
 router.post("/communities/:id/reservations", secure.auth, communitiesMid.exists, reservationsControllers.create);
-router.delete("/communities/:id/reservations/:reservationId", secure.auth, communitiesMid.exists, reservationsMid.exists, reservationsControllers.delete);
+router.delete("/communities/:id/reservations/:reservationId", secure.auth, communitiesMid.exists, reservationsMid.exists, reservationsMid.checkAuthor, reservationsControllers.delete);
 
 // Contacts
 router.get('/communities/:id/contacts', secure.auth, communitiesMid.exists, contactsControllers.list);
-router.post('/communities/:id/contacts', secure.auth, communitiesMid.exists, contactsControllers.create);
+router.post('/communities/:id/contacts', secure.auth, secure.isManager, communitiesMid.exists, contactsControllers.create);
 router.get('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsControllers.detail);
-router.patch('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsControllers.update);
-router.delete('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsControllers.delete);
+router.patch('/communities/:id/contacts/:contactId', secure.auth, secure.isManager, communitiesMid.exists, contactsMid.exists, contactsControllers.update);
+router.delete('/communities/:id/contacts/:contactId', secure.auth, secure.isManager, communitiesMid.exists, contactsMid.exists, contactsControllers.delete);
 
 
 
