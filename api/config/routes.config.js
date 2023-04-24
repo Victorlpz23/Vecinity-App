@@ -27,7 +27,7 @@ const contactsMid = require('../middlewares/contacts.mid');
 // Communities
 router.get('/communities', communitiesControllers.list);
 // secure.checkRole('admin')
-router.get('/communities/:id/neighbours', secure.isManager, communitiesControllers.usersList);
+router.get('/communities/:id/neighbours', communitiesMid.exists, communitiesControllers.usersList);
 router.post('/communities', secure.auth, communitiesControllers.create);
 router.get('/communities/:id', communitiesMid.exists, communitiesControllers.detail);
 router.patch('/communities/:id', secure.auth, secure.isManager, storage.single('image'), communitiesMid.exists, communitiesMid.checkManager, communitiesControllers.update);
