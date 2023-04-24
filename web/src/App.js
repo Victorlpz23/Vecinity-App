@@ -1,10 +1,10 @@
+import CommunitiesList from "./components/communities/communities-list/CommunitiesList";
+
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <CommunitiesList />
     </>
   );
 }
