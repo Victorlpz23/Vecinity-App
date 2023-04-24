@@ -1,9 +1,9 @@
-import http from './base-api'
+import http from './base-api';
 
 const list = () => http.get('/communities')
-  .then((res) => res.data)
+  .then((res) => res.data);
 
 
 export default {
-  list
-}
+  list,
+};
