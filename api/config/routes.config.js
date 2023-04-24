@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const storage = require('./storage.config');
+
 // Controllers
 const communitiesControllers = require('../controllers/communities.controllers');
 const usersControllers = require('../controllers/users.controllers');
@@ -28,7 +30,7 @@ router.get('/communities', communitiesControllers.list);
 router.get('/communities/:id/neighbours', secure.isManager, communitiesControllers.usersList);
 router.post('/communities', secure.auth, communitiesControllers.create);
 router.get('/communities/:id', communitiesMid.exists, communitiesControllers.detail);
-router.patch('/communities/:id', secure.auth, secure.isManager, communitiesMid.exists, communitiesMid.checkManager, communitiesControllers.update);
+router.patch('/communities/:id', secure.auth, secure.isManager, storage.single('image'), communitiesMid.exists, communitiesMid.checkManager, communitiesControllers.update);
 router.delete('/communities/:id', secure.auth, communitiesMid.exists, communitiesMid.checkManager, communitiesControllers.delete);
 // secure.checkRole('admin')
 
@@ -36,11 +38,11 @@ router.delete('/communities/:id', secure.auth, communitiesMid.exists, communitie
 router.get('/users', usersControllers.list);
 // secure.checkRole('admin')
 router.post('/users', usersControllers.create);
-router.post('/users/manager', usersControllers.createManager);
-router.get('/users/:id', usersMid.exists, usersControllers.detail);
 router.get('/users/:id/confirm', usersMid.exists, usersControllers.confirm);
-router.patch('/users/:id', secure.auth, usersControllers.update);
-router.delete('/users/:id', secure.auth, usersControllers.delete);
+router.post('/users/manager', usersControllers.createManager);
+router.get('/communities/:id/users/:userId', usersMid.exists, usersControllers.detail);
+router.patch('/communities/:id/users/:userId', secure.auth, storage.single('image'), usersControllers.update);
+router.delete('/communities/:id/users/:userId', secure.auth, usersControllers.delete);
 
 // Login
 router.post('/login', usersControllers.login);
@@ -48,7 +50,7 @@ router.post('/login', usersControllers.login);
 
 // Event
 router.get('/communities/:id/events', secure.auth, communitiesMid.exists, eventsControllers.list);
-router.post('/communities/:id/events', secure.auth, secure.isManager, communitiesMid.exists,  eventsControllers.create);
+router.post('/communities/:id/events', secure.auth, secure.isManager, communitiesMid.exists, eventsControllers.create);
 router.get('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, eventsControllers.detail);
 router.patch('/communities/:id/events/:eventId', secure.auth, secure.isManager, communitiesMid.exists, eventsMid.exists, eventsControllers.update);
 router.delete('/communities/:id/events/:eventId', secure.auth, secure.isManager, communitiesMid.exists, eventsMid.exists, eventsControllers.delete);
@@ -65,14 +67,14 @@ router.delete('/communities/:id/claims/:claimId', secure.auth, secure.isManager,
 
 // Forum Topic
 router.get('/communities/:id/forumTopics', secure.auth, communitiesMid.exists, forumTopicsControllers.list);
-router.post('/communities/:id/forumTopics', secure.auth, communitiesMid.exists,  forumTopicsControllers.create);
+router.post('/communities/:id/forumTopics', secure.auth, communitiesMid.exists, forumTopicsControllers.create);
 router.get('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.detail);
 router.patch('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.update);
 router.delete('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.delete);
 
 // Forum comments
 router.get('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists, forumCommentsControllers.list);
-router.post('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists,  forumCommentsControllers.create);
+router.post('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists, forumCommentsControllers.create);
 router.delete('/communities/:id/forumTopics/:forumTopicId/forumComments/:forumCommentId', secure.auth, communitiesMid.exists, forumCommentsMid.exists, forumCommentsControllers.delete);
 
 

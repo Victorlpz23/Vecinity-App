@@ -35,7 +35,7 @@ module.exports.sendManagerEmail = (user) => {
       text: "Welcome to the Vecinity App",
       html: `
       <h1>🌇 Welcome to Vecinity App 🌇</h1>
-      <p>Click on the following link to confirm your account:</p>
+      <p>Click on the following link to confirm your account & Create your Community:</p>
       <a href="${process.env.API_URL}/communities">Confirm</a>
     `
       ,
