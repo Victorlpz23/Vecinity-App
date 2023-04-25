@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import UsersForm from '../components/users/users-form/UsersForm';
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <UsersForm/>
+    </>
+  );
 }
 
-export default Home
+export default Home;
