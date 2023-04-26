@@ -64,21 +64,21 @@ module.exports.login = (req, res, next) => {
   User.findOne({ email: req.body.email })
     .then((user) => {
       if (!user || !req.body.password) {
-        return next(createError(401, "Invalid credentials"));
+        return next(createError(401, { errors: { password: 'Invalid Credentials' }}));
       }
 
       if (!user.confirm) {
-        return next(createError(401, "Please confirm your account"));
+        return next(createError(401, { errors: { email: 'Please Confirm your account' }}));
       }
 
       user.checkPassword(req.body.password)
         .then((match) => {
           if (!match) {
-            return next(createError(401, "Invalid credentials"));
+            return next(createError(401, { errors: { password: 'Invalid Credentials' }}));
           }
 
           const token = jwt.sign({ sub: user.id, exp: Date.now() / 1000 + 3_600 }, process.env.JWT_SECRET);
-          res.json({ token });
+          res.json({ token, ...user.toJSON() });
         });
     })
     .catch(next);

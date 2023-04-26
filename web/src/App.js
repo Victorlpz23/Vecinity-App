@@ -3,10 +3,10 @@ import CommunitiesList from "./components/communities/communities-list/Communiti
 import Home from "./pages/Home";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import UsersForm from "./components/users/users-form/UsersForm";
-import UserLogin from "./components/users/users-login/UserLogin";
-import UsersJoin from "./components/users/users-join/UsersJoin";
 import CommunityHome from "./pages/CommunityHome";
+import LoginPage from "./pages/LoginPage";
+import JoinPage from "./pages/JoinPage";
+import RegisterPage from "./pages/RegisterPage";
 
 
 function App() {
@@ -15,9 +15,9 @@ function App() {
     <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/users/signup" element={<UsersForm/>} />
-        <Route path="/login" element={<UserLogin/>} />
-        <Route path="/communities/join" element={<UsersJoin/>} />
+        <Route path="/users/signup" element={<RegisterPage/>} />
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/communities/join" element={<JoinPage/>} />
         <Route path="/communities/:id" element={<CommunityHome/>} />
         <Route path="*" element={<Navigate to={"/"} />} />
       </Routes>
