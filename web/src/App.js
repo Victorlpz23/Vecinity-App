@@ -11,7 +11,10 @@ function App() {
     <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/communities" element={<CommunitiesList />} />
+        <Route path="/users/signup" element={<CommunitiesList />} />
+        <Route path="/login" element={<CommunitiesList />} />
+        <Route path="/communities/join" element={<CommunitiesList />} />
+        <Route path="/communities/:id" element={<CommunitiesList />} />
         <Route path="*" element={<Navigate to={"/"} />} />
       </Routes>
       <Footer/>

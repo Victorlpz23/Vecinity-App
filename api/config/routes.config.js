@@ -29,6 +29,7 @@ router.get('/communities', communitiesControllers.list);
 // secure.checkRole('admin')
 router.get('/communities/:id/neighbours', communitiesMid.exists, communitiesControllers.usersList);
 router.post('/communities', secure.auth, communitiesControllers.create);
+router.post('/communities/join', secure.auth, communitiesControllers.join);
 router.get('/communities/:id', communitiesMid.exists, communitiesControllers.detail);
 router.patch('/communities/:id', secure.auth, secure.isManager, storage.single('image'), communitiesMid.exists, communitiesMid.checkManager, communitiesControllers.update);
 router.delete('/communities/:id', secure.auth, communitiesMid.exists, communitiesMid.checkManager, communitiesControllers.delete);
@@ -39,7 +40,6 @@ router.get('/users', usersControllers.list);
 // secure.checkRole('admin')
 router.post('/users', usersControllers.create);
 router.get('/users/:id/confirm', usersMid.exists, usersControllers.confirm);
-router.post('/users/manager', usersControllers.createManager);
 router.get('/communities/:id/users/:userId', usersMid.exists, usersControllers.detail);
 router.patch('/communities/:id/users/:userId', secure.auth, storage.single('image'), usersControllers.update);
 router.delete('/communities/:id/users/:userId', secure.auth, usersControllers.delete);

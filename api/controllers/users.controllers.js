@@ -12,36 +12,18 @@ module.exports.list = (req, res, next) => {
 
 
 module.exports.create = (req, res, next) => {
-  Community.findOne({ code: req.body.code })
-    .then((community) => {
-      delete req.body.code;
-      if (community) {
-        req.body.community = community.id;
-      }
-      return User.create(req.body);
-    })
+   User.create(req.body)
     .then((user) => {
-      mailer.sendConfirmationEmail(user);
+      // mailer.sendConfirmationEmail(user);
       res.status(201).json(user);
     })
     .catch(next);
 };
 
-module.exports.createManager = (req, res, next) => {
-  User.create(req.body)
-    .then((user) => {
-    mailer.sendManagerEmail(user);
-    res.status(201).json(user)
-  })
-    .catch(next);
-};
-
-
 
 
 module.exports.confirm = (req, res, next) => {
   req.user.confirm = true;
-
   req.user
     .save()
     .then((user) => {
