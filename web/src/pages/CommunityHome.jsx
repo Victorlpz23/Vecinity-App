@@ -4,7 +4,7 @@ function CommunityHome() {
   return (
     <>
 
-      <div class="grid grid-cols-3 gap-3 justify-items-center mt-8">
+      <div className="grid grid-cols-3 gap-3 justify-items-center mt-8">
         <div className='mb-5 hover:scale-125'>
           <svg width="70px" height="70px" viewBox="0 0 24 24" id="meteor-icon-kit__solid-exclamation-circle" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12ZM10.5 7.5V12C10.5 12.8284 11.1716 13.5 12 13.5C12.8284 13.5 13.5 12.8284 13.5 12V7.5C13.5 6.67157 12.8284 6 12 6C11.1716 6 10.5 6.67157 10.5 7.5ZM12 18C12.8284 18 13.5 17.3284 13.5 16.5C13.5 15.6716 12.8284 15 12 15C11.1716 15 10.5 15.6716 10.5 16.5C10.5 17.3284 11.1716 18 12 18Z" fill="#809D7B"></path></g></svg>
           <h3 className='animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent text-center mt-3 font-bold'>Claims</h3>

@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import userService from '../../../services/users';
+import { AuthContext } from '../../../contexts/AuthStore';
+import { useNavigate } from 'react-router-dom';
 
 function UserLogin() {
   const { register, handleSubmit, setError, formState: { errors } } = useForm({ mode: 'onBlur' });
   const [serverError, setServerError] = useState(undefined);
+  const { onUserChange } = useContext(AuthContext)
+  const navigate = useNavigate()
 
   const onLoginSubmit = (user) => {
     setServerError();
     userService.login(user)
       .then((user) => {
-        console.log(user);
+        onUserChange(user)
+        navigate(`/communities/${user.community}`)
       }).catch(error => {
         const errors = error.response?.data?.errors;
         if (errors) {
@@ -49,7 +54,7 @@ function UserLogin() {
                   </div>
                 }
                 <div>
-                  <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                  <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                       <svg width="25px" height="25px" viewBox="0 0 24 24" stroke-width="1.8" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M9 9l4.5 3L18 9M3 13.5h2M1 10.5h4" stroke="#809d7b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 7.5V7a2 2 0 012-2h13a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2v-.5" stroke="#809d7b" stroke-width="1.8" stroke-linecap="round"></path></svg>
@@ -67,7 +72,7 @@ function UserLogin() {
                     }
                   </div>
                   <div>
-                    <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                    <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg width="30px" height="30px" stroke-width="1.8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M16 12h1.4a.6.6 0 01.6.6v6.8a.6.6 0 01-.6.6H6.6a.6.6 0 01-.6-.6v-6.8a.6.6 0 01.6-.6H8m8 0V8c0-1.333-.8-4-4-4S8 6.667 8 8v4m8 0H8" stroke="#809d7b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>

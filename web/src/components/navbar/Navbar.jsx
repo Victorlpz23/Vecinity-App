@@ -1,8 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthStore';
 
 
 function Navbar() {
+
+  const { user, logout } = useContext(AuthContext);
+
+
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -16,7 +21,6 @@ function Navbar() {
               <span className="sr-only">Open user menu</span>
               <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="userphoto" />
             </button>
-
             <div className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
               <div className="px-4 py-3">
                 <span className="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
@@ -35,18 +39,33 @@ function Navbar() {
           </div>
           <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
             <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <Link to="/communities/:id" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
-                My Community
-              </Link>
-              <Link to="/communities/join" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
-                Join
-              </Link>
-              <Link to="/login" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
-                Login
-              </Link>
-              <Link to="/users/signup" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
-                Sign Up
-              </Link>
+              {(user?.email) ? (
+                <>
+                  <NavLink to="/communities/:id" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
+                    My Community
+                  </NavLink>
+                  <NavLink to="/profile" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
+                    {user.email}
+                  </NavLink>
+                  <li className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
+                    <button onClick={() => logout()} >Logout</button>
+                  </li>
+                </>
+
+              ) : (
+                <>
+                  <NavLink to="/communities/join" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
+                    Join
+                  </NavLink>
+                  <NavLink to="/login" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
+                    Login
+                  </NavLink>
+                  <NavLink to="/users/signup" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
+                    Sign Up
+                  </NavLink>
+                </>
+              )}
+
             </ul>
           </div>
         </div>
