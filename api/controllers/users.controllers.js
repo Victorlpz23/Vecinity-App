@@ -62,6 +62,7 @@ module.exports.delete = (req, res, next) => {
 
 module.exports.login = (req, res, next) => {
   User.findOne({ email: req.body.email })
+    .populate('community')
     .then((user) => {
       if (!user || !req.body.password) {
         return next(createError(401, { errors: { password: 'Invalid Credentials' }}));

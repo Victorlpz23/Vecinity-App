@@ -10,6 +10,7 @@ function AuthStore({ children }) {
 
   const handleUserChange = (user) => {
     setUser(user);
+    console.log(user)
   };
 
   const logout = () => {

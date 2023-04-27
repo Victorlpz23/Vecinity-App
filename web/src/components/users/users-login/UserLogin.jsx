@@ -15,7 +15,7 @@ function UserLogin() {
       setServerError();
       user = await userService.login(user);
       onUserChange(user);
-      navigate(`/communities/${user.community}`);
+      navigate(`/communities/${user.community.id}`);
     } catch (error) {
       const errors = error.response?.data?.errors;
       if (errors) {

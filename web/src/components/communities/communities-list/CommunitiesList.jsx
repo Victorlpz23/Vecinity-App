@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import communitiesService from '../../../services/communities'
+import * as communitiesService from '../../../services/communities'
 import CommunityItem from '../community-item/CommunityItem';
 
 function CommunitiesList() {
