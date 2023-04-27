@@ -7,25 +7,26 @@ import { useNavigate } from 'react-router-dom';
 function UserLogin() {
   const { register, handleSubmit, setError, formState: { errors } } = useForm({ mode: 'onBlur' });
   const [serverError, setServerError] = useState(undefined);
-  const { onUserChange } = useContext(AuthContext)
-  const navigate = useNavigate()
+  const { onUserChange } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const onLoginSubmit = (user) => {
-    setServerError();
-    userService.login(user)
-      .then((user) => {
-        onUserChange(user)
-        navigate(`/communities/${user.community}`)
-      }).catch(error => {
-        const errors = error.response?.data?.errors;
-        if (errors) {
-          Object.keys(errors)
-            .forEach((inputName) => setError(inputName, { message: errors[inputName] }));
-        } else {
-          setServerError(error.message);
-        }
-      });
+  const onLoginSubmit = async (user) => {
+    try {
+      setServerError();
+      user = await userService.login(user);
+      onUserChange(user);
+      navigate(`/communities/${user.community}`);
+    } catch (error) {
+      const errors = error.response?.data?.errors;
+      if (errors) {
+        Object.keys(errors)
+          .forEach((inputName) => setError(inputName, { message: errors[inputName] }));
+      } else {
+        setServerError(error.message);
+      }
+    }
   };
+
 
   return (
     <>

@@ -60,7 +60,7 @@ function Navbar() {
                   <NavLink to="/login" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
                     Login
                   </NavLink>
-                  <NavLink to="/users/signup" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
+                  <NavLink to="/users" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
                     Sign Up
                   </NavLink>
                 </>

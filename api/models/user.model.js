@@ -20,7 +20,6 @@ const userSchema = new Schema({
   },
   home: {
     type: String,
-    required: "Home is required",
   },
   phoneNumber: {
     type: Number,
