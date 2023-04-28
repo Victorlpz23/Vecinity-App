@@ -20,7 +20,7 @@ function ClaimsList() {
   return (
     <>
       {claims.map((claim) => 
-        <ClaimItem claim={claim}/>
+        <ClaimItem claim={claim} communityId={id}/>
       )}
     </>
   )

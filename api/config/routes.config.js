@@ -59,7 +59,7 @@ router.delete('/communities/:id/events/:eventId', secure.auth, secure.isManager,
 // Claims
 router.get('/communities/:id/claims', communitiesMid.exists, claimsControllers.list);
 router.post('/communities/:id/claims', secure.auth, communitiesMid.exists, claimsControllers.create);
-router.get('/communities/:id/claims/:claimId', secure.auth, communitiesMid.exists, claimsMid.exists, claimsControllers.detail);
+router.get('/communities/:id/claims/:claimId', communitiesMid.exists, claimsMid.exists, claimsControllers.detail);
 router.patch('/communities/:id/claims/:claimId', secure.auth, secure.isManager, communitiesMid.exists, claimsMid.exists, claimsControllers.update);
 // todo patch for the manager
 router.delete('/communities/:id/claims/:claimId', secure.auth, secure.isManager, communitiesMid.exists, claimsMid.exists, claimsMid.checkAuthor, claimsControllers.delete);
@@ -79,8 +79,8 @@ router.delete('/communities/:id/forumTopics/:forumTopicId/forumComments/:forumCo
 
 
 // Reservations
-router.get("/communities/:id/reservations", secure.auth, communitiesMid.exists, reservationsControllers.list);
-router.get("/communities/:id/reservations/:reservationId", secure.auth, communitiesMid.exists, reservationsMid.exists, reservationsControllers.detail);
+router.get("/communities/:id/reservations", communitiesMid.exists, reservationsControllers.list);
+router.get("/communities/:id/reservations/:reservationId", communitiesMid.exists, reservationsMid.exists, reservationsControllers.detail);
 router.post("/communities/:id/reservations", secure.auth, communitiesMid.exists, reservationsControllers.create);
 router.delete("/communities/:id/reservations/:reservationId", secure.auth, communitiesMid.exists, reservationsMid.exists, reservationsMid.checkAuthor, reservationsControllers.delete);
 

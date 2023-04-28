@@ -3,6 +3,7 @@ const Claim = require('../models/claim.model');
 module.exports.list = (req, res, next) => {
   Claim.find()
     .populate('author')
+    .populate('community')
     .then((claims) => res.json(claims))
     .catch(next);
 };

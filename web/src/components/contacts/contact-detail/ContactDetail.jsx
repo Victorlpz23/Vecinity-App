@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import contactService from '../../../services/contacts';
 import { useNavigate, useParams } from 'react-router-dom';
 
-function ContactDetail({ children }) {
+function ContactDetail() {
   const [contact, setContact] = useState({});
   const navigate = useNavigate();
   const { id, contactId } = useParams();

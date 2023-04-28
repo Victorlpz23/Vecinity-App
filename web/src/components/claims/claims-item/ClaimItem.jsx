@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-function ClaimItem({ claim }) {
+function ClaimItem({ claim, communityId }) {
   return (
-    <div>{claim.title}</div>
-  )
+    <div><Link to={`/communities/${communityId}/claims/${claim.id}`}>{claim.title}</Link></div>
+  );
 }
 
-export default ClaimItem
+export default ClaimItem;
