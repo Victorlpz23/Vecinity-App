@@ -9,6 +9,11 @@ module.exports.exists = (req, res, next) => {
     .populate('claims')
     .populate('neighbours')
     .populate('manager')
+    .populate('forumTopics')
+    .populate('forumComments')
+    .populate('events')
+    .populate('contacts')
+    .populate('reservations')
     .then((community) => {
       if (community) {
         req.community = community;

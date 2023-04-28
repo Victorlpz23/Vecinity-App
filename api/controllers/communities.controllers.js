@@ -6,6 +6,11 @@ module.exports.list = (req, res, next) => {
     .populate('claims')
     .populate('neighbours')
     .populate('manager')
+    .populate('forumTopics')
+    .populate('forumComments')
+    .populate('events')
+    .populate('contacts')
+    .populate('reservations')
     .then((communities) => res.json(communities))
     .catch(next);
 };
@@ -41,8 +46,8 @@ module.exports.join = (req, res, next) => {
     .then((community) => {
       req.user.community = community.id;
       Object.assign(req.user, req.body);
-      req.user.save()
-      res.json(req.user)
+      req.user.save();
+      res.json(req.user);
     }).catch(next);
 };
 

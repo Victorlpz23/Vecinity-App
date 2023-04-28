@@ -47,6 +47,41 @@ communitySchema.virtual("claims", {
   justOne: false,
 });
 
+communitySchema.virtual("contacts", {
+  ref: "Contact",
+  localField: "_id",
+  foreignField: "community",
+  justOne: false,
+});
+
+communitySchema.virtual("forumTopics", {
+  ref: "ForumTopic",
+  localField: "_id",
+  foreignField: "community",
+  justOne: false,
+});
+
+communitySchema.virtual("forumComments", {
+  ref: "ForumComment",
+  localField: "_id",
+  foreignField: "community",
+  justOne: false,
+});
+
+communitySchema.virtual("reservations", {
+  ref: "Reservation",
+  localField: "_id",
+  foreignField: "community",
+  justOne: false,
+});
+
+communitySchema.virtual("events", {
+  ref: "Event",
+  localField: "_id",
+  foreignField: "community",
+  justOne: false,
+});
+
 communitySchema.virtual("neighbours", {
   ref: "User",
   localField: "_id",

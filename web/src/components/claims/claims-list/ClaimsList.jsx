@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom';
 
 function ClaimsList() {
   const { id } = useParams()
-
   const [claims, setClaims] = useState([]);
 
 
@@ -23,7 +22,6 @@ function ClaimsList() {
       {claims.map((claim) => 
         <ClaimItem claim={claim}/>
       )}
-
     </>
   )
 }

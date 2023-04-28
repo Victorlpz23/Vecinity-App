@@ -7,6 +7,7 @@ module.exports.list = (req, res, next) => {
 };
 
 module.exports.create = (req, res, next) => {
+  req.body.community = req.user.community
   Contact.create(req.body)
     .then((contact) => res.status(201).json(contact))
     .catch(next);
