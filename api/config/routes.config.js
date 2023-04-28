@@ -87,7 +87,7 @@ router.delete("/communities/:id/reservations/:reservationId", secure.auth, commu
 // Contacts
 router.get('/communities/:id/contacts', communitiesMid.exists, contactsControllers.list);
 router.post('/communities/:id/contacts', secure.auth, communitiesMid.exists, contactsControllers.create);
-router.get('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsControllers.detail);
+router.get('/communities/:id/contacts/:contactId', communitiesMid.exists, contactsMid.exists, contactsControllers.detail);
 router.patch('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsControllers.update);
 router.delete('/communities/:id/contacts/:contactId', secure.auth, communitiesMid.exists, contactsMid.exists, contactsControllers.delete);
 

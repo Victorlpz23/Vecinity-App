@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-function ContactItem({ contact }) {
+function ContactItem({ contact, communityId }) {
   return (
-    <div>{contact.name}</div>
+    <div><Link to={`/communities/${communityId}/contacts/${contact.id}`}>{contact.name}</Link></div>
   )
 }
 

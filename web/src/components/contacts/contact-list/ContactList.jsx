@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import ContactItem from '../contact-item/ContactItem';
 import contactService from '../../../services/contacts'
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function ContactList() {
 
     const [contacts, setContacts] = useState([])
     const { id } = useParams()
-    console.log(id)
 
     useEffect(() => {
       contactService.list(id)
@@ -16,11 +15,9 @@ function ContactList() {
       }).catch(console.error)
     }, [id])
 
-
-
   return (
     <>
-      {contacts.map(contact => <div><ContactItem contact={contact} key={contact.id} /></div>)}
+      {contacts.map(contact => <div><ContactItem contact={contact} communityId={id} key={contact.id} /></div>)}
     </>
   )
 }

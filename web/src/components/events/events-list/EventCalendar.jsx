@@ -6,7 +6,7 @@ function EventCalendar() {
       <div>
       </div>
       <div class="flex items-center justify-center py-4 px-4">
-        <div class="max-w-sm w-full  shadow-orange shadow-lg">
+        <div class="max-w-sm w-full rounded-lg shadow-orange shadow-sm">
           <div class="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">
             <div class="px-4 flex items-center justify-between">
               <span tabindex="0" class="focus:outline-none text-green font-bold dark:text-gray-100">October 2020</span>

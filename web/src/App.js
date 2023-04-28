@@ -15,6 +15,7 @@ import ReservationsPage from "./pages/ReservationsPage";
 import SettingsPage from "./pages/SettingsPage";
 import PrivateRoute from "./guards/PrivateRoute";
 import ContactDetail from "./components/contacts/contact-detail/ContactDetail";
+import ContactPage from "./pages/ContactPage";
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
           <Route path="/communities/:id/events" element={<PrivateRoute><EventsPage/></PrivateRoute> } />
           <Route path="/communities/:id/forumTopics" element={<ForumPage/>} />
           <Route path="/communities/:id/contacts" element={<ContactsPage/>} />
-          <Route path="/communities/:id/contacts/:contactId" element={<ContactDetail/>} />
+          <Route path="/communities/:id/contacts/:contactId" element={<ContactPage/>} />
           <Route path="/communities/:id/reservations" element={<ReservationsPage/>} />
           <Route path="/communities/:id/users/:userId" element={<SettingsPage/>} />
           <Route path="*" element={<Navigate to={"/"} />} />
