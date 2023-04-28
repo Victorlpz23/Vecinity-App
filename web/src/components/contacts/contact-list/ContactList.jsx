@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ContactItem from '../contact-item/ContactItem';
 import contactService from '../../../services/contacts'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function ContactList() {
 

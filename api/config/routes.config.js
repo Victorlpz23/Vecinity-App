@@ -49,7 +49,7 @@ router.post('/login', usersControllers.login);
 
 
 // Event
-router.get('/communities/:id/events', communitiesMid.exists, eventsControllers.list);
+router.get('/communities/:id/events', secure.auth, communitiesMid.exists, eventsControllers.list);
 router.post('/communities/:id/events', secure.auth, secure.isManager, communitiesMid.exists, eventsControllers.create);
 router.get('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, eventsControllers.detail);
 router.patch('/communities/:id/events/:eventId', secure.auth, secure.isManager, communitiesMid.exists, eventsMid.exists, eventsControllers.update);
@@ -66,7 +66,7 @@ router.delete('/communities/:id/claims/:claimId', secure.auth, secure.isManager,
 
 
 // Forum Topic
-router.get('/communities/:id/forumTopics', communitiesMid.exists, forumTopicsControllers.list);
+router.get('/communities/:id/forumTopics', secure.auth, communitiesMid.exists, forumTopicsControllers.list);
 router.post('/communities/:id/forumTopics', secure.auth, communitiesMid.exists, forumTopicsControllers.create);
 router.get('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.detail);
 router.patch('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.update);

@@ -13,6 +13,8 @@ import ForumPage from "./pages/ForumPage";
 import ContactsPage from "./pages/ContactsPage";
 import ReservationsPage from "./pages/ReservationsPage";
 import SettingsPage from "./pages/SettingsPage";
+import PrivateRoute from "./guards/PrivateRoute";
+import ContactDetail from "./components/contacts/contact-detail/ContactDetail";
 
 
 function App() {
@@ -26,10 +28,11 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/communities/join" element={<JoinPage />} />
           <Route path="/communities/:id" element={<CommunityHome />} />
-          <Route path="/communities/:id/claims" element={<ClaimsPage/>} />
-          <Route path="/communities/:id/events" element={<EventsPage/>} />
+          <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage/></PrivateRoute>} />
+          <Route path="/communities/:id/events" element={<PrivateRoute><EventsPage/></PrivateRoute> } />
           <Route path="/communities/:id/forumTopics" element={<ForumPage/>} />
           <Route path="/communities/:id/contacts" element={<ContactsPage/>} />
+          <Route path="/communities/:id/contacts/:contactId" element={<ContactDetail/>} />
           <Route path="/communities/:id/reservations" element={<ReservationsPage/>} />
           <Route path="/communities/:id/users/:userId" element={<SettingsPage/>} />
           <Route path="*" element={<Navigate to={"/"} />} />

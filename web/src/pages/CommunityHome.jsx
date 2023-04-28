@@ -51,7 +51,6 @@ function CommunityHome() {
             <h3 className='animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent text-center mt-3 font-bold'>Settings</h3>
           </div>
         </NavLink>
-
       </div>
     </>
   );
