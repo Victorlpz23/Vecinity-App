@@ -6,7 +6,11 @@ const list = (communityId) => http.get(`/communities/${communityId}/forumTopics`
 const detail = (communityId, forumTopicId) => http.get(`/communities/${communityId}/forumTopics/${forumTopicId}`)
   .then((res) => res.data)
 
+const create = (communityId) => http.post(`/communities/${communityId}/forumTopics`)
+  .then((res) => res.data)
+
   export default {
     list, 
     detail,
+    create
   }

@@ -18,6 +18,8 @@ import PrivateRoute from "./guards/PrivateRoute";
 import ContactPage from "./pages/ContactPage";
 import ClaimPage from "./pages/ClaimPage";
 import ForumTopicPage from "./pages/ForumTopicPage";
+import CreateJoinPage from "./pages/CreateJoinPage";
+import CommunityCreatePage from "./pages/CommunityCreatePage";
 
 
 function App() {
@@ -29,7 +31,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/communities/join" element={<JoinPage />} />
+          <Route path="/create-join" element={<CreateJoinPage/>} />
+          <Route path="/join" element={<JoinPage />} />
+          <Route path="/communities/create" element={<CommunityCreatePage/> } />
           <Route path="/communities/:id" element={<CommunityHome />} />
           <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage/></PrivateRoute>} />
           <Route path="/communities/:id/claims/:claimId" element={<ClaimPage/>} />

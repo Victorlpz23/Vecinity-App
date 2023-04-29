@@ -9,7 +9,7 @@ function UsersForm() {
   const navigate = useNavigate()
 
   const onUserSubmit = (user) => {
-    setServerError(undefined);
+    setServerError();
     userService.create(user)
       .then(user => {
         console.info(user)

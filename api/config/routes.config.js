@@ -73,8 +73,8 @@ router.patch('/communities/:id/forumTopics/:forumTopicId', communitiesMid.exists
 router.delete('/communities/:id/forumTopics/:forumTopicId',  communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.delete);
 
 // Forum comments
-router.get('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists, forumCommentsControllers.list);
-router.post('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists, forumCommentsControllers.create);
+router.get('/communities/:id/forumTopics/:forumTopicId/forumComments',  communitiesMid.exists, forumCommentsControllers.list);
+router.post('/communities/:id/forumTopics/:forumTopicId/forumComments',  communitiesMid.exists, forumCommentsControllers.create);
 router.delete('/communities/:id/forumTopics/:forumTopicId/forumComments/:forumCommentId', secure.auth, communitiesMid.exists, forumCommentsMid.exists, forumCommentsControllers.delete);
 
 

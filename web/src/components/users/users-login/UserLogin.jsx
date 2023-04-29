@@ -15,7 +15,11 @@ function UserLogin() {
       setServerError();
       user = await userService.login(user);
       onUserChange(user);
+      if (!user.community) {
+        navigate('/create-join')
+      } else {
       navigate(`/communities/${user.community.id}`);
+      }
     } catch (error) {
       const errors = error.response?.data?.errors;
       if (errors) {
