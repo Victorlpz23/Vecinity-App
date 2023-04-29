@@ -12,6 +12,7 @@ module.exports.list = (req, res, next) => {
 module.exports.detail = (req, res, next) => res.json(req.reservation);
 
 module.exports.create = (req, res, next) => {
+  req.body.community = req.user.community
   Reservation.create(req.body)
     .then((reservation) => res.status(201).json(reservation))
     .catch(next);

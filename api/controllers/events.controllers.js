@@ -8,6 +8,7 @@ module.exports.list = (req, res, next) => {
 
 
 module.exports.create = (req, res, next) => {
+  req.body.community = req.user.community
   Event.create(req.body)
     .then((event) => res.status(201).json(event))
     .catch(next);

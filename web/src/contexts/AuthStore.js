@@ -6,17 +6,17 @@ const AuthContext = createContext();
 function AuthStore({ children }) {
 
   const [user, setUser] = useState();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleUserChange = (user) => {
     setUser(user);
-    console.log(user)
+    console.log(user);
   };
 
   const logout = () => {
-    handleUserChange()
-    navigate('/login')
-  }
+    handleUserChange();
+    navigate('/login');
+  };
 
   return (
     <>

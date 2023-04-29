@@ -66,11 +66,11 @@ router.delete('/communities/:id/claims/:claimId', secure.auth, secure.isManager,
 
 
 // Forum Topic
-router.get('/communities/:id/forumTopics', secure.auth, communitiesMid.exists, forumTopicsControllers.list);
-router.post('/communities/:id/forumTopics', secure.auth, communitiesMid.exists, forumTopicsControllers.create);
-router.get('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.detail);
-router.patch('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.update);
-router.delete('/communities/:id/forumTopics/:forumTopicId', secure.auth, communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.delete);
+router.get('/communities/:id/forumTopics',  communitiesMid.exists, forumTopicsControllers.list);
+router.post('/communities/:id/forumTopics',  communitiesMid.exists, forumTopicsControllers.create);
+router.get('/communities/:id/forumTopics/:forumTopicId',  communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.detail);
+router.patch('/communities/:id/forumTopics/:forumTopicId', communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.update);
+router.delete('/communities/:id/forumTopics/:forumTopicId',  communitiesMid.exists, forumTopicsMid.exists, forumTopicsControllers.delete);
 
 // Forum comments
 router.get('/communities/:id/forumTopics/:forumTopicId/forumComments', secure.auth, communitiesMid.exists, forumCommentsControllers.list);

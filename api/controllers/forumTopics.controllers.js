@@ -2,12 +2,15 @@ const ForumTopic = require('../models/forumTopic.model');
 
 module.exports.list = (req, res, next) => {
   ForumTopic.find()
+    .populate('author')
+    .populate('community')
     .then((forumTopics) => res.json(forumTopics))
     .catch(next);
 };
 
 
 module.exports.create = (req, res, next) => {
+  req.body.community = req.user.community;
   ForumTopic.create(req.body)
     .then((forumTopic) => res.status(201).json(forumTopic))
     .catch(next);

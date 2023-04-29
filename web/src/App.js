@@ -9,15 +9,15 @@ import RegisterPage from "./pages/RegisterPage";
 import AuthStore from './contexts/AuthStore';
 import ClaimsPage from "./pages/ClaimsPage";
 import EventsPage from "./pages/EventsPage";
-import ForumPage from "./pages/ForumPage";
+import ForumTopicsPage from "./pages/ForumTopicsPage";
 import ContactsPage from "./pages/ContactsPage";
 import ReservationsPage from "./pages/ReservationsPage";
 import ReservationPage from "./pages/ReservationPage";
 import SettingsPage from "./pages/SettingsPage";
 import PrivateRoute from "./guards/PrivateRoute";
-import ContactDetail from "./components/contacts/contact-detail/ContactDetail";
 import ContactPage from "./pages/ContactPage";
 import ClaimPage from "./pages/ClaimPage";
+import ForumTopicPage from "./pages/ForumTopicPage";
 
 
 function App() {
@@ -34,7 +34,8 @@ function App() {
           <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage/></PrivateRoute>} />
           <Route path="/communities/:id/claims/:claimId" element={<ClaimPage/>} />
           <Route path="/communities/:id/events" element={<PrivateRoute><EventsPage/></PrivateRoute> } />
-          <Route path="/communities/:id/forumTopics" element={<ForumPage/>} />
+          <Route path="/communities/:id/forumTopics" element={<ForumTopicsPage/>} />
+          <Route path="/communities/:id/forumTopics/:forumTopicId" element={<ForumTopicPage/> } />
           <Route path="/communities/:id/contacts" element={<ContactsPage/>} />
           <Route path="/communities/:id/contacts/:contactId" element={<ContactPage/>} />
           <Route path="/communities/:id/reservations" element={<ReservationsPage/>} />
