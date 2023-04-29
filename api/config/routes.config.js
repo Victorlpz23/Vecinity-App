@@ -57,7 +57,7 @@ router.delete('/communities/:id/events/:eventId', secure.auth, secure.isManager,
 
 
 // Claims
-router.get('/communities/:id/claims', communitiesMid.exists, claimsControllers.list);
+router.get('/communities/:id/claims', secure.auth, communitiesMid.exists, claimsControllers.list);
 router.post('/communities/:id/claims', secure.auth, communitiesMid.exists, claimsControllers.create);
 router.get('/communities/:id/claims/:claimId', communitiesMid.exists, claimsMid.exists, claimsControllers.detail);
 router.patch('/communities/:id/claims/:claimId', secure.auth, secure.isManager, communitiesMid.exists, claimsMid.exists, claimsControllers.update);

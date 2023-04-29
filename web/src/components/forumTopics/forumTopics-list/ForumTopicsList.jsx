@@ -11,7 +11,6 @@ function ForumTopicsList() {
     forumTopicsService.list(id)
       .then((forumTopics) => {
         setForumTopics(forumTopics)
-        console.log(forumTopics)
       }).catch(console.error)
   }, [id])
 
