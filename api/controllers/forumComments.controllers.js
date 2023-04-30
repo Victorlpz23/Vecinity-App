@@ -9,6 +9,7 @@ module.exports.list = (req, res, next) => {
 
 module.exports.create = (req, res, next) => {
   req.body.community = req.user.community
+  req.body.author = req.user
   ForumComment.create(req.body)
     .then((forumComment) => res.status(201).json(forumComment))
     .catch(next);

@@ -11,7 +11,7 @@ const contactSchema = new Schema({
   description: {
     type: String,
     required: "Description is required",
-    minlength: [20, "Description needs at least 20 chars"],
+    minlength: [10, "Description needs at least 20 chars"],
     maxlength: [140, "Description max 140 chars"],
   },
   phoneNumber: {
@@ -23,7 +23,7 @@ const contactSchema = new Schema({
   },
   contactUrl: {
     type: String,
-    match: [/^https?:\/\/.+\.(jpg|jpeg|png)$/, "Image URL must be valid"],
+    match: [/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i, "Contact URL must be valid"],
   },
   community: {
     type: mongoose.Schema.Types.ObjectId,
