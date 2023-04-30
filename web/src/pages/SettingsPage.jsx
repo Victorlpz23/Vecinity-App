@@ -1,8 +1,13 @@
 import React from 'react'
 
+import UserSettings from '../components/users/user-settings/UserSettings';
+
 function SettingsPage() {
   return (
-    <div>SettingsPage</div>
+    <>
+   
+    <UserSettings/>
+    </>
   )
 }
 

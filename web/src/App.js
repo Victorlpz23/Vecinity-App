@@ -20,6 +20,7 @@ import ClaimPage from "./pages/ClaimPage";
 import ForumTopicPage from "./pages/ForumTopicPage";
 import CreateJoinPage from "./pages/CreateJoinPage";
 import CommunityCreatePage from "./pages/CommunityCreatePage";
+import ProfilePage from "./pages/ProfilePage";
 
 
 function App() {
@@ -44,7 +45,8 @@ function App() {
           <Route path="/communities/:id/contacts/:contactId" element={<ContactPage/>} />
           <Route path="/communities/:id/reservations" element={<ReservationsPage/>} />
           <Route path="/communities/:id/reservations/:reservationId" element={<ReservationPage/>} />
-          <Route path="/communities/:id/users/:userId" element={<SettingsPage/>} />
+          <Route path="/communities/:id/users/:userId/account" element={<ProfilePage/> } />
+          <Route path="/communities/:id/users/:userId/settings" element={<SettingsPage/>} />
           <Route path="*" element={<Navigate to={"/"} />} />
         </Routes>
         <Footer />

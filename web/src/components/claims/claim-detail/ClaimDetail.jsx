@@ -42,14 +42,29 @@ function ClaimDetail() {
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 mb-20">
               <div className="w-full bg-white rounded-lg shadow shadow-orange dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                 <div className='flex justify-center mt-5 mb-3'>
-                  <span class="inline-flex items-center p-1 mr-2 text-sm font-semibold text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                    <h1>Pending</h1>
-                    <svg aria-hidden="true" class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  </span>
-                  <span class="inline-flex items-center p-1 mr-2 text-sm font-semibold text-white bg-green rounded-full dark:bg-gray-700 dark:text-blue-400">
-                    <h1>Solved </h1>
-                    <svg aria-hidden="true" class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                  </span>
+                  <ol class="flex items-center">
+                    <li class="relative w-full mb-6">
+                      <div class="flex items-center">
+                        <div class="z-10 flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+                          <svg aria-hidden="true" class="w-4 h-4 text-blue-100 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <div class="flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+                      </div>
+                      <div class="mt-3 mr-5">
+                        <h3 class="font-medium text-gray-900 dark:text-white -ml-4 mr-6">Pending</h3>
+                      </div>
+                    </li>
+                    <li class="relative w-full mb-6">
+                      <div class="flex items-center">
+                        <div class="z-10 flex items-center justify-center w-6 h-6 bg-gray-200 rounded-full ring-0 ring-white dark:bg-gray-700 sm:ring-8 dark:ring-gray-900 shrink-0">
+                          <svg aria-hidden="true" class="w-3 h-3 text-gray-800 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </div>
+                      </div>
+                      <div class="mt-3">
+                        <h3 class="font-medium text-gray-900 dark:text-white -ml-2">Solved</h3>
+                      </div>
+                    </li>
+                  </ol>
                 </div>
                 <h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">{claim.title}</h5>
                 <p class="font-normal text-center text-gray-700 dark:text-gray-400">{claim.description}</p>
@@ -63,4 +78,5 @@ function ClaimDetail() {
 }
 
 export default ClaimDetail;
+
 
