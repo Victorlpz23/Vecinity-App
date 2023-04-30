@@ -7,7 +7,7 @@ function ReservationsList() {
 
     const [reservations, setReservations] = useState([])
     const { id } = useParams()
-    console.log(id)
+  
 
     useEffect(() => {
       reservationsService.list(id)

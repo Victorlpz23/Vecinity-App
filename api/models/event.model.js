@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const eventSchema = new Schema({
   title: {
     type: String,
-    required: true,
+    required: "Title is required",
   },
   date: {
       type: String,
@@ -12,7 +12,7 @@ const eventSchema = new Schema({
   },
   description: {
     type: String,
-    required: true,
+    required: "Description is required",
     minlength: [20, "Description needs at least 20 chars"],
     maxlength: [140, "Description max 140 chars"],
   },

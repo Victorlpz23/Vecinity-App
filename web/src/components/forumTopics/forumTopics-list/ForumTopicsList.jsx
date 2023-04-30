@@ -16,7 +16,7 @@ function ForumTopicsList() {
 
   return (
     <>
-      {forumTopics.map((forumTopic => <div><ForumTopicItem forumTopic={forumTopic} communityId={id} /></div> ))}
+      {forumTopics.map((forumTopic => <div><ForumTopicItem forumTopic={forumTopic} key={forumTopic.id} communityId={id} /></div> ))}
     </>
   )
 }

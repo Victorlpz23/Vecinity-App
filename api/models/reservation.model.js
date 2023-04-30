@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const reservationSchema = new Schema({
   facility: {
     type: String,
-    required: true,
+    required: "Facility is required",
   },
   date: { 
     day: { type: Date },

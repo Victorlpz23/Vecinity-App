@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import contactService from "../../../services/contacts";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ContactForm() {
   const {
@@ -12,11 +12,12 @@ function ContactForm() {
   } = useForm({ mode: "onBlur" });
   const [serverError, setServerError] = useState(undefined);
   const navigate = useNavigate();
+  const { id } = useParams()
 
   const onContactSubmit = (contact) => {
     setServerError();
     contactService
-      .create(contact)
+      .create(id)
       .then((contact) => {
         console.info(contact);
         navigate("/login");
@@ -37,7 +38,7 @@ function ContactForm() {
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-900">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 mb-20">
           <div className="w-full bg-white rounded-lg  shadow-orange shadow-sm dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight text-center tracking-tight text-green md:text-2xl dark:text-white">
@@ -118,7 +119,7 @@ function ContactForm() {
                     {errors.description && (
                       <p className="mt-2 text-sm text-red-600 dark:text-red-500">
                         <span className="font-medium">Oops!</span>
-                        {errors.name?.description}{" "}
+                        {errors.description?.description}{" "}
                       </p>
                     )}
                   </div>
