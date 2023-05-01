@@ -5,10 +5,10 @@ import { AuthContext } from '../../../contexts/AuthStore';
 function UserProfile() {
   const { user } = useContext(AuthContext);
 
+  console.log(user)
   return (
     <>
       <div class="border-b border-gray-200 dark:border-gray-700 flex justify-center">
-
         <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
           <li className="mr-2">
             <NavLink to={`/communities/${user?.community.id}/users/${user?.id}/account`} activeClassName="text-orange border-orange dark:text-gray-300 dark:border-gray-300 inline-flex p-4 border-b-2 border-transparent rounded-t-lg group">
@@ -21,7 +21,6 @@ function UserProfile() {
             </NavLink>
           </li>
         </ul>
-
       </div>
       <div className="flex flex-col items-center">
         <div className="w-full h-40 bg-gray-200 flex items-center justify-center">

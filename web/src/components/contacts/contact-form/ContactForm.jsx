@@ -12,7 +12,7 @@ function ContactForm() {
   } = useForm({ mode: "onBlur" });
   const [serverError, setServerError] = useState(undefined);
   const navigate = useNavigate();
-  const { id } = useParams()
+  const { id } = useParams();
 
   const onContactSubmit = (contact) => {
     setServerError();
@@ -80,14 +80,19 @@ function ContactForm() {
                   >
                     Nombre
                   </label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="large-input"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Name"
-                    {...register("name", { required: "Name is required" })}
-                  />
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <svg width="28px" height="28px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M7 18v-1a5 5 0 015-5v0a5 5 0 015 5v1" stroke="#809d7b" stroke-width="2" stroke-linecap="round"></path><path d="M12 12a3 3 0 100-6 3 3 0 000 6z" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="12" r="10" stroke="#809d7b" stroke-width="2"></circle></svg>
+                    </div>
+                    <input
+                      type="text"
+                      name="name"
+                      id="large-input"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="         Name"
+                      {...register("name", { required: "Name is required" })}
+                    />
+                  </div>
                   <div>
                     {errors.name && (
                       <p className="mt-2 text-sm text-red-600 dark:text-red-500">
@@ -99,31 +104,25 @@ function ContactForm() {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="large-input"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Descripción
-                  </label>
-                  <input
-                    type="text"
-                    name="description"
-                    id="description"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Description"
-                    {...register("description", {
-                      required: "Description is required",
-                    })}
-                  />
+                  <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <svg width="28px" height="28px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M7 12h10M7 8h6" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 20.29V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H7.961a2 2 0 00-1.561.75l-2.331 2.914A.6.6 0 013 20.29z" stroke="#809d7b" stroke-width="2"></path></svg>
+                    </div>
+                    <input className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg
+                      focus:ring-primary-600 focus:border-primary-600 block p-2.5 dark:bg-gray-700 dark:border-gray-600
+                      dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 lock w-full  ${errors.description
+                        ? `bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500
+                      focus:border-red-500 block w-full p-2.5 dark:bg-red-100 dark:border-red-400` : ''}`} id="lastName"
+                      type="text" placeholder="         Description" {...register('description', { required: "Description is required", })}
+                    />
+                  </div>
                   <div>
-                    {errors.description && (
-                      <p className="mt-2 text-sm text-red-600 dark:text-red-500">
-                        <span className="font-medium">Oops!</span>
-                        {errors.description?.description}{" "}
-                      </p>
-                    )}
+                    {errors.description && <p className="mt-2 text-sm text-red-600 dark:text-red-500"><span className="font-medium">Oops!</span>
+                      {errors.description?.message} </p>}
                   </div>
                 </div>
+
                 <div>
                   <label
                     htmlFor="phoneNumber"
@@ -131,25 +130,33 @@ function ContactForm() {
                   >
                     Número de teléfono
                   </label>
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                   <span>
+                     <svg width="28px" height="28px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M18.118 14.702L14 15.5c-2.782-1.396-4.5-3-5.5-5.5l.77-4.13L7.815 2H4.064c-1.128 0-2.016.932-1.847 2.047.42 2.783 1.66 7.83 5.283 11.453 3.805 3.805 9.286 5.456 12.302 6.113 1.165.253 2.198-.655 2.198-1.848v-3.584l-3.882-1.479z" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                   </span>
+                   </div>
                   <input
                     type="number"
                     name="phoneNumber"
                     id="phoneNumber"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="PhoneNumber"
+                    placeholder="         PhoneNumber"
                     {...register("phoneNumber", {
                       required: "PhoneNumber is required",
                     })}
                   />
+                  </div>
                   <div>
                     {errors.phoneNumber && (
                       <p className="mt-2 text-sm text-red-600 dark:text-red-500">
                         <span className="font-medium">Oops!</span>
-                        {errors.name?.phoneNumber}{" "}
+                        {errors.phoneNumber?.message}{" "}
                       </p>
                     )}
                   </div>
                 </div>
+
                 <div>
                   <label
                     htmlFor="email"
