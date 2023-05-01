@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const Community = require('../models/community.model');
 
 module.exports.list = (req, res, next) => {
-  User.find()
+  User.find({ community: req.params.id })
     .then((users) => res.json(users))
     .catch(next);
 };

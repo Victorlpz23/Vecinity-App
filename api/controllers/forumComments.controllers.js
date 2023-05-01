@@ -1,7 +1,7 @@
 const ForumComment = require('../models/forumComment.model');
 
 module.exports.list = (req, res, next) => {
-  ForumComment.find()
+  ForumComment.find({ forumTopic: req.params.forumTopicId })
     .then((forumComments) => res.json(forumComments))
     .catch(next);
 };

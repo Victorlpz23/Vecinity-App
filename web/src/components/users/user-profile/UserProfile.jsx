@@ -23,21 +23,17 @@ function UserProfile() {
         </ul>
 
       </div>
-      <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div class="w-full bg-white rounded-lg shadow shadow-orange dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Very easy this was to integrate</h3>
-              <p class="my-4">If you care for your time, I hands down would go with this."</p>
-            </blockquote>
-            <div class="flex items-center justify-center space-x-3">
-              <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profilepicture" />
-              <div class="space-y-0.5 font-medium dark:text-white text-left">
-                <div>Bonnie Green</div>
-                <div class="text-sm text-gray-500 dark:text-gray-400">Developer at Open AI</div>
-              </div>
-            </div>
-          </div>
+      <div className="flex flex-col items-center">
+        <div className="w-full h-40 bg-gray-200 flex items-center justify-center">
+          <img
+            className="w-20 h-20 rounded-full object-cover"
+            src={user?.imageUrl}
+            alt="Userprofilepicture"
+          />
+        </div>
+        <div className="w-full max-w-md p-4">
+          <h1 className="text-3xl font-bold mb-2">{user?.name}</h1>
+          <p className="text-gray-700 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis molestie erat, a blandit quam. Nam id nisl est. Proin aliquam mollis massa vel bibendum.</p>
         </div>
       </div>
     </>

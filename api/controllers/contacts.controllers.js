@@ -1,9 +1,12 @@
 const Contact = require("../models/contact.model");
 
 module.exports.list = (req, res, next) => {
-  Contact.find()
+  Contact.find({ community: req.params.id })
     .populate('community')
-    .then((contact) => res.json(contact))
+    .then((contact) => {
+      console.log(req.params.communityId)
+      res.json(contact)
+      })
     .catch(next);
 };
 

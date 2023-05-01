@@ -1,7 +1,7 @@
 const ForumTopic = require('../models/forumTopic.model');
 
 module.exports.list = (req, res, next) => {
-  ForumTopic.find()
+  ForumTopic.find({ community: req.params.id })
     .populate('author')
     .populate('community')
     .then((forumTopics) => res.json(forumTopics))

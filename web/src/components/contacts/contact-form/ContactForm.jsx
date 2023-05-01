@@ -17,7 +17,7 @@ function ContactForm() {
   const onContactSubmit = (contact) => {
     setServerError();
     contactService
-      .create(id)
+      .create(id, contact)
       .then((contact) => {
         console.info(contact);
         navigate("/login");

@@ -1,7 +1,7 @@
 const Claim = require('../models/claim.model');
 
 module.exports.list = (req, res, next) => {
-  Claim.find()
+  Claim.find({ community: req.params.id })
     .populate('author')
     .populate('community')
     .then((claims) => res.json(claims))

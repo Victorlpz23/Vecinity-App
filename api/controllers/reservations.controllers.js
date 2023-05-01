@@ -1,7 +1,7 @@
 const Reservation = require("../models/reservation.model");
 
 module.exports.list = (req, res, next) => {
-  Reservation.find()
+  Reservation.find({ community: req.params.id })
     .populate("author")
     .then((reservations) => {
       res.json(reservations);
