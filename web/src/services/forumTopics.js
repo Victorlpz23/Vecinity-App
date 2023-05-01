@@ -6,7 +6,7 @@ const list = (communityId) => http.get(`/communities/${communityId}/forumTopics`
 const detail = (communityId, forumTopicId) => http.get(`/communities/${communityId}/forumTopics/${forumTopicId}`)
   .then((res) => res.data)
 
-const create = (communityId) => http.post(`/communities/${communityId}/forumTopics`)
+const create = (communityId, forumTopic) => http.post(`/communities/${communityId}/forumTopics`, forumTopic)
   .then((res) => res.data)
 
   export default {

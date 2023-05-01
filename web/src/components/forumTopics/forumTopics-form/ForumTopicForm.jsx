@@ -8,15 +8,15 @@ function ForumTopicForm() {
   const { register, handleSubmit, setError, formState: { errors } } = useForm({ mode: 'onBlur' });
   const [serverError, setServerError] = useState(undefined);
   const navigate = useNavigate();
-  const { communityId } = useParams() 
+  const { id } = useParams() 
 
 
-  const onForumTopicSubmit = () => {
+  const onForumTopicSubmit = (forumTopic) => {
     setServerError();
-    forumTopicService.create(communityId)
+    forumTopicService.create(id, forumTopic)
       .then(forumTopic => {
         console.info(forumTopic);
-        navigate('/');
+        navigate(`/communities/${id}/forumTopics`);
       })
 
       .catch(error => {

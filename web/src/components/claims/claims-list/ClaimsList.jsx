@@ -15,7 +15,7 @@ function ClaimsList() {
       .then((claims) => {
         setClaims(claims);
       }).catch(console.error);
-  }, [id]);
+  }, [id, claims]);
 
   return (
     <>

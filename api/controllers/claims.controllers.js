@@ -11,7 +11,7 @@ module.exports.list = (req, res, next) => {
 
 module.exports.create = (req, res, next) => {
   req.body.community = req.user.community
-  req.body.author = req.user
+  req.body.author = req.user.id
   Claim.create(req.body)
     .then((claim) => res.status(201).json(claim))
     .catch(next);

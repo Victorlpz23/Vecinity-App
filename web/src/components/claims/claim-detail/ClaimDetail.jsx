@@ -21,7 +21,7 @@ function ClaimDetail() {
       }
     }
     fetchClaim();
-  }, [id, claimId]);
+  }, [id, claimId, navigate]);
 
 
   return (
