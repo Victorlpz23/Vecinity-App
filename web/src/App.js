@@ -28,27 +28,27 @@ function App() {
     <>
       <AuthStore>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/users" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/create-join" element={<CreateJoinPage/>} />
-          <Route path="/join" element={<JoinPage />} />
-          <Route path="/communities/create" element={<CommunityCreatePage/> } />
-          <Route path="/communities/:id" element={<PrivateRoute><CommunityHome /></PrivateRoute>} />
-          <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage/></PrivateRoute>} />
-          <Route path="/communities/:id/claims/:claimId" element={<ClaimPage/>} />
-          <Route path="/communities/:id/events" element={<PrivateRoute><EventsPage/></PrivateRoute> } />
-          <Route path="/communities/:id/forumTopics" element={<ForumTopicsPage/>} />
-          <Route path="/communities/:id/forumTopics/:forumTopicId" element={<ForumTopicPage/> } />
-          <Route path="/communities/:id/contacts" element={<ContactsPage/>} />
-          <Route path="/communities/:id/contacts/:contactId" element={<ContactPage/>} />
-          <Route path="/communities/:id/reservations" element={<ReservationsPage/>} />
-          <Route path="/communities/:id/reservations/:reservationId" element={<ReservationPage/>} />
-          <Route path="/communities/:id/users/:userId/account" element={<ProfilePage/> } />
-          <Route path="/communities/:id/users/:userId/settings" element={<SettingsPage/>} />
-          <Route path="*" element={<Navigate to={"/"} />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/users" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/create-join" element={<CreateJoinPage/>} />
+            <Route path="/join" element={<JoinPage />} />
+            <Route path="/communities/create" element={<CommunityCreatePage/> } />
+            <Route path="/communities/:id" element={<PrivateRoute><CommunityHome /></PrivateRoute>} />
+            <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage/></PrivateRoute>} />
+            <Route path="/communities/:id/claims/:claimId" element={<ClaimPage/>} />
+            <Route path="/communities/:id/events" element={<PrivateRoute><EventsPage/></PrivateRoute> } />
+            <Route path="/communities/:id/forumTopics" element={<ForumTopicsPage/>} />
+            <Route path="/communities/:id/forumTopics/:forumTopicId" element={<ForumTopicPage/> } />
+            <Route path="/communities/:id/contacts" element={<ContactsPage/>} />
+            <Route path="/communities/:id/contacts/:contactId" element={<ContactPage/>} />
+            <Route path="/communities/:id/reservations" element={<ReservationsPage/>} />
+            <Route path="/communities/:id/reservations/:reservationId" element={<ReservationPage/>} />
+            <Route path="/communities/:id/users/:userId/account" element={<ProfilePage/> } />
+            <Route path="/communities/:id/users/:userId/settings" element={<SettingsPage/>} />
+            <Route path="*" element={<Navigate to={"/"} />} />
+          </Routes>
         <Footer />
       </AuthStore>
     </>

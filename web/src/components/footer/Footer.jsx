@@ -10,7 +10,7 @@ function Footer() {
     <div>
 
       <footer className="fixed bottom-0 left-0 z-20 w-full p-4 bg-white  md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
-        <div class="sticky bottom-0 mb-2 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+        <div class="sticky bottom-0 mb-2 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 lg:hidden md:hidden">
           <div class="grid h-full max-w-lg grid-cols-3 mx-auto border-b">
             <div class="hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600">
               <NavLink to={`/communities/${user?.community?.id}`}>
