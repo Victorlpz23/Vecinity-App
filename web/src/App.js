@@ -35,7 +35,7 @@ function App() {
           <Route path="/create-join" element={<CreateJoinPage/>} />
           <Route path="/join" element={<JoinPage />} />
           <Route path="/communities/create" element={<CommunityCreatePage/> } />
-          <Route path="/communities/:id" element={<CommunityHome />} />
+          <Route path="/communities/:id" element={<PrivateRoute><CommunityHome /></PrivateRoute>} />
           <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage/></PrivateRoute>} />
           <Route path="/communities/:id/claims/:claimId" element={<ClaimPage/>} />
           <Route path="/communities/:id/events" element={<PrivateRoute><EventsPage/></PrivateRoute> } />

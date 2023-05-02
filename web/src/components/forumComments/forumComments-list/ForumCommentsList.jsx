@@ -20,7 +20,6 @@ function ForumCommentsList() {
         <ForumCommentItem forumComment={forumComment} />
       ))}
     </div>
-
   );
 }
 

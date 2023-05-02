@@ -4,6 +4,8 @@ const createError = require('http-errors');
 const jwt = require('jsonwebtoken');
 const Community = require('../models/community.model');
 
+const maxSessionAge = parseInt(process.env.MAX_SESSION_AGE) || 3600 
+
 module.exports.list = (req, res, next) => {
   User.find({ community: req.params.id })
     .then((users) => res.json(users))
@@ -78,7 +80,7 @@ module.exports.login = (req, res, next) => {
             return next(createError(401, { errors: { password: 'Invalid Credentials' }}));
           }
 
-          const token = jwt.sign({ sub: user.id, exp: Date.now() / 1000 + 3_600 }, process.env.JWT_SECRET);
+          const token = jwt.sign({ sub: user.id, exp: Date.now() / 1000 + maxSessionAge }, process.env.JWT_SECRET);
           res.json({ token, ...user.toJSON() });
         });
     })

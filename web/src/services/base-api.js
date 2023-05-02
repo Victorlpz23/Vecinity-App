@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const http = axios.create({
   baseURL: process.env.REACT_APP_BASE_API_URL || 'http://localhost:3001/api/v1'
-})
+});
 
 http.interceptors.request.use(
   config => {
@@ -14,6 +14,22 @@ http.interceptors.request.use(
     return config;
   },
   error => Promise.reject(error)
+);
+
+
+http.interceptors.response.use(
+  response => response.data,
+  error => {
+    const status = error.response?.status;
+    if (status === 401 && !window.location.href.includes('login')) {
+      localStorage.removeItem('current-user');
+      localStorage.removeItem('user-access-token');
+      window.location.href = '/login';
+      return Promise.resolve();
+    } else {
+      return Promise.reject(error);
+    }
+  }
 );
 
 export default http;
