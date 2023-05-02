@@ -5,17 +5,16 @@ import { useParams } from 'react-router-dom';
 
 
 
-function ClaimsList() {
+function ClaimsList({ refresh }) {
   const { id } = useParams();
   const [claims, setClaims] = useState([]);
 
 
   useEffect(() => {
     claimService.list(id)
-      .then((claims) => {
-        setClaims(claims);
-      }).catch(console.error);
-  }, [id, claims]);
+      .then((claims) => setClaims(claims))
+      .catch(console.error);
+  }, [id, refresh]);
 
   return (
     <>

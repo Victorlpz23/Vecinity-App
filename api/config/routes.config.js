@@ -49,8 +49,8 @@ router.post('/login', usersControllers.login);
 
 
 // Event
-router.get('/communities/:id/events', secure.auth, communitiesMid.exists, eventsControllers.list);
-router.post('/communities/:id/events', secure.auth, secure.isManager, communitiesMid.exists, eventsControllers.create);
+router.get('/communities/:id/events/:eventsDate', secure.auth, communitiesMid.exists, eventsControllers.list);
+router.post('/communities/:id/events', secure.auth, communitiesMid.exists, eventsControllers.create);
 router.get('/communities/:id/events/:eventId', secure.auth, communitiesMid.exists, eventsMid.exists, eventsControllers.detail);
 router.patch('/communities/:id/events/:eventId', secure.auth, secure.isManager, communitiesMid.exists, eventsMid.exists, eventsControllers.update);
 router.delete('/communities/:id/events/:eventId', secure.auth, secure.isManager, communitiesMid.exists, eventsMid.exists, eventsControllers.delete);

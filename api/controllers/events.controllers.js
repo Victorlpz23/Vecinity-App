@@ -1,7 +1,7 @@
 const Event = require('../models/event.model');
 
 module.exports.list = (req, res, next) => {
-  Event.find({ community: req.params.id })
+  Event.find({ community: req.params.id, date: req.params.eventsDate })
     .then((events) => res.json(events))
     .catch(next);
 };

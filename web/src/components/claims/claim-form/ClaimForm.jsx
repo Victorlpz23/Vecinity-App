@@ -3,18 +3,19 @@ import { useForm } from 'react-hook-form';
 import claimsService from '../../../services/claims';
 import { useNavigate, useParams } from 'react-router-dom';
 
-function ClaimForm() {
+function ClaimForm({ onClaimCreated }) {
   const { register, handleSubmit, setError, formState: { errors } } = useForm({ mode: 'onBlur' });
   const [serverError, setServerError] = useState(undefined);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { id } = useParams();
 
   const onClaimSubmit = (claim) => {
     setServerError();
     claimsService.create(id, claim)
       .then(claim => {
+        onClaimCreated()
         console.info(claim);
-        navigate(`/communities/${id}/claims`);
+        // navigate(`/communities/${id}/claims`);
       })
       .catch(error => {
         const errors = error.response?.data?.errors;
@@ -75,8 +76,8 @@ function ClaimForm() {
                   <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                    <svg width="28px" height="28px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M7 12h10M7 8h6" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 20.29V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H7.961a2 2 0 00-1.561.75l-2.331 2.914A.6.6 0 013 20.29z" stroke="#809d7b" stroke-width="2"></path></svg>
-                     </div>
+                      <svg width="28px" height="28px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M7 12h10M7 8h6" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 20.29V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H7.961a2 2 0 00-1.561.75l-2.331 2.914A.6.6 0 013 20.29z" stroke="#809d7b" stroke-width="2"></path></svg>
+                    </div>
                     <input className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg
                       focus:ring-primary-600 focus:border-primary-600 block w-full  dark:bg-gray-700 dark:border-gray-600
                       dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 pl-10 p-2.5 ${errors.title
@@ -98,5 +99,9 @@ function ClaimForm() {
     </>
   );
 }
+
+ClaimForm.defaultProps = {
+  onClaimCreated: () => { }
+};
 
 export default ClaimForm;

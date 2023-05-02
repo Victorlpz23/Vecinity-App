@@ -13,7 +13,7 @@ function CommunityHome() {
         <NavLink to={`/communities/${user?.community.id}/claims`}>
           <div>
           <svg className='hover:animate-spin' width="80px" height="80px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M12 11.5v5M12 7.51l.01-.011M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            <h3 className='animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent text-center mt-3 font-bold'>Claims</h3>
+            <h1 className='animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent text-center mt-3 font-bold'>Claims</h1>
           </div>
         </NavLink>
 
