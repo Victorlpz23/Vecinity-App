@@ -10,6 +10,7 @@ module.exports = {
         "orange": "#FF914D",
         "green": "#809D7B",
         "greensoft": "#E0E8DF",
+        "orangesoft": "#F7A877"
       },
       animation: {
         text: 'text 5s ease infinite',
