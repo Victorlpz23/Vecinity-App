@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import claimsService from '../../../services/claims';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function ClaimForm({ onClaimCreated }) {
   const { register, handleSubmit, setError, formState: { errors } } = useForm({ mode: 'onBlur' });
   const [serverError, setServerError] = useState(undefined);
-  // const navigate = useNavigate();
+
   const { id } = useParams();
 
   const onClaimSubmit = (claim) => {
@@ -15,7 +15,6 @@ function ClaimForm({ onClaimCreated }) {
       .then(claim => {
         onClaimCreated();
         console.info(claim);
-        // navigate(`/communities/${id}/claims`);
       })
       .catch(error => {
         const errors = error.response?.data?.errors;
@@ -97,6 +96,9 @@ function ClaimForm({ onClaimCreated }) {
                       {errors.description?.message} </p>}
                   </div>
                 </div>
+
+
+                
                 <button type="submit" className="w-full text-white bg-orange hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create Claim</button>
               </form>
             </div>

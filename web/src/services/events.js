@@ -5,7 +5,7 @@ const list = (communityId, eventsDate) => http.get(`/communities/${communityId}/
 
 const detail = (communityId, eventId) => http.get(`/communities/${communityId}/events/${eventId}`)
 
-const create = (communityId) => http.post(`/communities/${communityId}/events`)
+const create = (communityId, event) => http.post(`/communities/${communityId}/events`, event)
 
 
 export default { list, detail, create };

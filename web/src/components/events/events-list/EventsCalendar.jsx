@@ -3,27 +3,9 @@ import Calendar from 'react-calendar';
 import './EventsCalendar.css';
 import eventsService from '../../../services/events';
 import { useParams } from 'react-router-dom';
+import moment from 'moment'
 
 function EventsCalendar() {
-
-  // const eventsjson = [
-  //   {
-  //     id: '1',
-  //     title: 'Event One',
-  //     date: "Fri May 26 2023 00:00:00 GMT+0200 (Central European Summer Time)"
-  //   },
-  //   {
-  //     id: '2',
-  //     title: 'Event Two',
-  //     date: "Fri May 26 2023 00:00:00 GMT+0200 (Central European Summer Time)"
-  //   },
-
-  //   {
-  //     id: '3',
-  //     title: 'Event Three',
-  //     date: "Mon May 1 2023 00:00:00 GMT+0200 (Central European Summer Time)"
-  //   }
-  // ];
 
   const [value, onChange] = useState(new Date());
 
@@ -35,13 +17,10 @@ function EventsCalendar() {
     eventsService.list(id, daySelected)
       .then(events => setEventsFound(events))
       .catch(error => console.error(error));
-
-    // setEventsFound(eventsjson.filter(event => event.date === daySelected));
-    // console.log(daySelected)
   }, [daySelected]);
 
   const displayEvents = (day) => {
-    const dayString = day.toString();
+    const dayString = moment(day).format("YYYY-MM-DD").toString();
     console.log(dayString);
     setDaySelected(dayString);
   };

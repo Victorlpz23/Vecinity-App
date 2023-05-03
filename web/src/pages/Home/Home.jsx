@@ -17,7 +17,7 @@ function Home() {
               Join your neighbours in Vecinity!
             </h1>
             <p className="leading-normal text-2xl mb-8">
-            Discover everything you can do with Vecinity
+            Discover everything you can do with Vecinity App
             </p>
             <button className="mx-auto lg:mx-0 hover:underline bg-orange text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
               Sign up
