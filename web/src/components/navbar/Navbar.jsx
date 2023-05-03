@@ -35,16 +35,6 @@ function Navbar() {
             </div>
           ) : (
             <>
-              <div className="items-center justify-between w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
-                <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                  <NavLink to="/login" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
-                    Login
-                  </NavLink>
-                  <NavLink to="/signup" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
-                    Sign Up
-                  </NavLink>
-                </ul>
-              </div>
             </>
           )}
           <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
@@ -70,7 +60,7 @@ function Navbar() {
                     Log in
                   </NavLink>
                   <NavLink to="/signup" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
-                    Sign Up
+                    Sign up
                   </NavLink>
                 </>
               )}

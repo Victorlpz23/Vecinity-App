@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function CreateJoinPage() {
   return (
@@ -7,7 +7,9 @@ function CreateJoinPage() {
       <div className="bg-white border-b py-8">
         <div className="container max-w-5xl mx-auto m-8">
           <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-            Welcome to Vecinity App What would you like to do next?
+            Welcome to Vecinity App
+            <br />
+             What would you like to do next?
           </h2>
           <div className="w-full mb-4">
             <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>

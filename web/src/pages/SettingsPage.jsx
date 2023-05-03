@@ -1,13 +1,16 @@
-import React from 'react'
+import React from 'react';
 
 import UserSettings from '../components/users/user-settings/UserSettings';
+import PageLayout from '../components/layout/PageLayout';
 
 function SettingsPage() {
   return (
     <>
-    <UserSettings/>
+      <PageLayout title="Settings" >
+        <UserSettings />
+      </PageLayout>
     </>
-  )
+  );
 }
 
-export default SettingsPage
+export default SettingsPage;

@@ -38,7 +38,6 @@ function EventsCalendar() {
               ? eventsFound.map(event => <li key={event.id}>{event.title}</li>)
               : <p>No events</p>
           }
-          <button>Add event</button>
         </div>
         }
 
