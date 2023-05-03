@@ -7,7 +7,7 @@ import moment from 'moment'
 
 function EventsCalendar() {
 
-  const [value, onChange] = useState(new Date());
+  const [value, setValue] = useState(new Date());
 
   const [daySelected, setDaySelected] = useState('');
   const { id } = useParams();
