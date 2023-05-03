@@ -15,6 +15,9 @@ module.exports = {
       animation: {
         text: 'text 5s ease infinite',
       },
+      fontFamily: {
+        sans: ['Roboto', 'Helvetica', 'Arial', 'sans-serif']
+      },
       keyframes: {
         text: {
           '0%, 100%': {
