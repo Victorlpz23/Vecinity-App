@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthStore'
+import PageLayout from '../components/layout/PageLayout';
 
 
 function CommunityHome() {
@@ -9,29 +10,30 @@ function CommunityHome() {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-8 justify-items-center lg:grid-cols-3 md:grid-cols-2">
-        <NavLink to={`/communities/${user?.community.id}/claims`}>
+      <PageLayout title="My Community">
+      <div className="grid grid-cols-2 gap-8 justify-items-center lg:grid-cols-3 md:grid-cols-2 lg: pt-28">
+        <NavLink to={`/communities/${user?.community?.id}/claims`}>
           <div>
           <svg className='hover:animate-spin' width="80px" height="80px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M12 11.5v5M12 7.51l.01-.011M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             <h1 className='animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent text-center mt-3 font-bold'>Claims</h1>
           </div>
         </NavLink>
 
-        <NavLink to={`/communities/${user?.community.id}/events`}>
+        <NavLink to={`/communities/${user?.community?.id}/events`}>
           <div className='mb-5 transition duration-150 ease-out hover:ease-in'>
           <svg width="80px" height="80px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M15 4V2m0 2v2m0-2h-4.5M3 10v9a2 2 0 002 2h14a2 2 0 002-2v-9H3zM3 10V6a2 2 0 012-2h2M7 2v4M21 10V6a2 2 0 00-2-2h-.5" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
             <h3 className='animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent text-center mt-3 font-bold'>Events</h3>
           </div>
         </NavLink>
 
-        <NavLink to={`/communities/${user?.community.id}/forumTopics`}>
+        <NavLink to={`/communities/${user?.community?.id}/forumTopics`}>
           <div className='mb-5'>
           <svg className='hover:animate-pulse' width="80px" height="80px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M8 10h8M8 14h4M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2.5 21.5l4.5-.838A9.955 9.955 0 0012 22z" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> 
           <h3 className='animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent text-center mt-3 font-bold'>Forum</h3>
           </div>
         </NavLink>
 
-        <NavLink to={`/communities/${user?.community.id}/contacts`}>
+        <NavLink to={`/communities/${user?.community?.id}/contacts`}>
           <div className='mb-5'>
           <svg className='hover:animate-ping' width="80px" stroke-width="2" height="80px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M4 19V5a2 2 0 012-2h13.4a.6.6 0 01.6.6v13.114" stroke="#809d7b" stroke-width="2" stroke-linecap="round"></path><path d="M8 3v8l2.5-1.6L13 11V3" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 17h14M6 21h14" stroke="#809d7b" stroke-width="2" stroke-linecap="round"></path><path d="M6 21a2 2 0 110-4" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
              <h3 className='animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent text-center mt-3 font-bold'>Contacts</h3>
@@ -52,6 +54,7 @@ function CommunityHome() {
           </div>
         </NavLink>
       </div>
+      </PageLayout>
     </>
   );
 }

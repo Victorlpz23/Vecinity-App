@@ -1,12 +1,15 @@
-import React from 'react'
+import React from 'react';
 import ClaimDetail from '../components/claims/claim-detail/ClaimDetail';
+import PageLayout from '../components/layout/PageLayout';
 
 function ClaimPage() {
   return (
     <>
-      <ClaimDetail/>
+      <PageLayout title="Claim Information" >
+        <ClaimDetail />
+      </PageLayout>
     </>
-  )
+  );
 }
 
-export default ClaimPage
+export default ClaimPage;

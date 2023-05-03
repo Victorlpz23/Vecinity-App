@@ -16,9 +16,9 @@ function UserLogin() {
       user = await userService.login(user);
       onUserChange(user);
       if (!user.community) {
-        navigate('/create-join')
+        navigate('/create-join');
       } else {
-      navigate(`/communities/${user.community.id}`);
+        navigate(`/communities/${user.community.id}`);
       }
     } catch (error) {
       const errors = error.response?.data?.errors;
@@ -58,6 +58,8 @@ function UserLogin() {
                     </div>
                   </div>
                 }
+
+
                 <div>
                   <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                   <div className="relative">
@@ -76,6 +78,7 @@ function UserLogin() {
                       {errors.email?.message} </p>
                     }
                   </div>
+
                   <div>
                     <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                     <div className="relative">
@@ -90,6 +93,9 @@ function UserLogin() {
                         type="password" placeholder="••••••••" {...register('password', { required: "Password is required", })} />
                     </div>
                   </div>
+
+
+
                   <div>
                     {errors.password && <p className="mt-2 text-sm text-red-600 dark:text-red-500"><span className="font-medium">Oops! </span>
                       {errors.password?.message} </p>}

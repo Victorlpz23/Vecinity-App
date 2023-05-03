@@ -30,7 +30,7 @@ function App() {
         <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/users" element={<RegisterPage />} />
+            <Route path="/signup" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/create-join" element={<CreateJoinPage/>} />
             <Route path="/join" element={<JoinPage />} />
@@ -47,7 +47,7 @@ function App() {
             <Route path="/communities/:id/reservations/:reservationId" element={<ReservationPage/>} />
             <Route path="/communities/:id/users/:userId/account" element={<ProfilePage/> } />
             <Route path="/communities/:id/users/:userId/settings" element={<SettingsPage/>} />
-            <Route path="*" element={<Navigate to={"/"} />} />
+            {/* <Route path="*" element={<Navigate to={"/"} />} /> */}
           </Routes>
         <Footer />
       </AuthStore>

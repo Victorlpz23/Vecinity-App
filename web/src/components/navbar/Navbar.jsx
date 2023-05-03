@@ -16,7 +16,7 @@ function Navbar() {
             <img src="/images/Vecinity-logo.png" className="h-12 mr-3" alt="Vecinity Logo" />
             <span className="self-center text-3xl md:text-4xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent dark:text-white">Vecinity App</span>
           </a>
-          {(user.id) ? (
+          {(user?.id) ? (
             <div className="flex items-center md:order-2">
               <button type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
                 <span className="sr-only">Open user menu</span>
@@ -40,7 +40,7 @@ function Navbar() {
                   <NavLink to="/login" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
                     Login
                   </NavLink>
-                  <NavLink to="/users" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
+                  <NavLink to="/signup" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
                     Sign Up
                   </NavLink>
                 </ul>
@@ -58,7 +58,7 @@ function Navbar() {
                     <h1>Welcome {user.name}</h1>
                   </li>
                   <li className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
-                    <button onClick={() => logout()} >Logout</button>
+                    <button onClick={() => logout()} >Log out</button>
                   </li>
                 </>
               ) : (
@@ -67,9 +67,9 @@ function Navbar() {
                     Join
                   </NavLink>
                   <NavLink to="/login" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
-                    Login
+                    Log in
                   </NavLink>
-                  <NavLink to="/users" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
+                  <NavLink to="/signup" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-blue-500">
                     Sign Up
                   </NavLink>
                 </>
