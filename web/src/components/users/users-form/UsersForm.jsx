@@ -53,6 +53,9 @@ function UsersForm() {
                     </div>
                   </div>
                 }
+
+                    {/* Name */}
+
                 <div>
                   <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                   <div className="relative">
@@ -73,6 +76,8 @@ function UsersForm() {
                 </div>
 
 
+                {/* lastName */}
+
                 <div>
                   <label htmlFor="lastName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
                   <input className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg
@@ -84,6 +89,9 @@ function UsersForm() {
                   {errors.lastName && <p className="mt-2 text-sm text-red-600 dark:text-red-500"><span className="font-medium">Oops!</span>
                     {errors.lastName?.message} </p>}
                 </div>
+
+                {/* Email */}
+
                 <div>
                   <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                   <div className="relative">
@@ -102,6 +110,10 @@ function UsersForm() {
                       {errors.email?.message} </p>}
                   </div>
                 </div>
+
+                {/* Password */}
+
+
                 <div>
                   <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                   <input className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg
@@ -124,6 +136,10 @@ function UsersForm() {
                   {errors.password && <p className="mt-2 text-sm text-red-600 dark:text-red-500"><span className="font-medium">Oops!</span>
                     {errors.password?.message} </p>}
                 </div> */}
+
+
+                {/* Terms & Conditions */}
+
                 <div className="flex items-start">
                   <div className="flex items-center h-5">
                     <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="" />
@@ -134,7 +150,7 @@ function UsersForm() {
                 </div>
                 <button type="submit" className="w-full text-white bg-orange hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create an account</button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Already have an account? <a href="/" className="font-medium text-green hover:underline dark:text-primary-500">Login here</a>
+                  Already have an account? <a href="/login" className="font-medium text-green hover:underline dark:text-primary-500">Login here</a>
                 </p>
               </form>
             </div>
