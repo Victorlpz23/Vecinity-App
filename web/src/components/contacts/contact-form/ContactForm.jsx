@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import contactService from "../../../services/contacts";
 import { useParams } from "react-router-dom";
 
-function ContactForm() {
+function ContactForm({ onContactCreated }) {
   const {
     register,
     handleSubmit,
@@ -19,6 +19,7 @@ function ContactForm() {
       .create(id, contact)
       .then((contact) => {
         console.info(contact);
+        onContactCreated();;
       })
 
       .catch((error) => {

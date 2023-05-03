@@ -3,7 +3,7 @@ import ContactItem from '../contact-item/ContactItem';
 import contactService from '../../../services/contacts'
 import { useParams } from 'react-router-dom';
 
-function ContactList() {
+function ContactList({ refresh }) {
 
     const [contacts, setContacts] = useState([])
     const { id } = useParams()
@@ -13,7 +13,7 @@ function ContactList() {
       .then((contacts) => {
         setContacts(contacts)
       }).catch(console.error)
-    }, [id])
+    }, [id, refresh])
 
   return (
     <>

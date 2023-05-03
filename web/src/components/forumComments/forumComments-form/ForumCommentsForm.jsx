@@ -4,7 +4,7 @@ import forumCommentsService from '../../../services/forumComments';
 import { useNavigate, useParams } from "react-router-dom";
 
 
-function ForumCommentsForm() {
+function ForumCommentsForm({ onCommentCreated }) {
   const { register, handleSubmit, setValue } = useForm();
   const { id, forumTopicId } = useParams();
   const navigate = useNavigate();
@@ -12,8 +12,8 @@ function ForumCommentsForm() {
   const onCommentSubmit = (comment) => {
     forumCommentsService.create(id, forumTopicId, comment)
       .then((comment) => {
-        navigate(`/communities/${id}/forumTopics/${forumTopicId}`);
         setValue('text');
+        onCommentCreated();
       })
       .catch(console.error);
   };

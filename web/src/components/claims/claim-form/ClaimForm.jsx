@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import claimsService from '../../../services/claims';
 import { useParams } from 'react-router-dom';
 
-function ClaimForm({ onClaimCreated }) {
+function ClaimForm({ onContactCreated }) {
   const { register, handleSubmit, setError, formState: { errors } } = useForm({ mode: 'onBlur' });
   const [serverError, setServerError] = useState(undefined);
 
@@ -13,7 +13,7 @@ function ClaimForm({ onClaimCreated }) {
     setServerError();
     claimsService.create(id, claim)
       .then(claim => {
-        onClaimCreated();
+        onContactCreated();
         console.info(claim);
       })
       .catch(error => {

@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ForumTopicsList from '../components/forumTopics/forumTopics-list/ForumTopicsList';
 import ForumTopicForm from '../components/forumTopics/forumTopics-form/ForumTopicForm';
 
 function ForumPage() {
+  const [refreshTopics, setRefreshTopics] = useState(false)
+
+  const toggleRefreshTopics = () => setRefreshTopics(!refreshTopics);
+
   return (
     <>
-      <ForumTopicsList/>
-      <ForumTopicForm/>
+      <ForumTopicsList refresh={refreshTopics}/>
+      <ForumTopicForm onTopicCreated={toggleRefreshTopics} />
     </>
   )
 }

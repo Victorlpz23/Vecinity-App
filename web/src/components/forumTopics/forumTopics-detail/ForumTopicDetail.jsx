@@ -9,7 +9,9 @@ function ForumTopicDetail() {
   const [forumTopic, setForumTopic] = useState({});
   const { id, forumTopicId } = useParams();
 
+  const [ refreshComments, setRefreshComments ] = useState(false)
 
+  const toggleRefreshComments = () => setRefreshComments(!refreshComments)
 
   useEffect(() => {
     forumTopicService.detail(id, forumTopicId)
@@ -24,8 +26,8 @@ function ForumTopicDetail() {
       <ForumTopicItem forumTopic={forumTopic} key={forumTopic.id} communityId={id} />
 
       {/* Comments*/}
-      <ForumCommentsList />
-      <ForumCommentsForm />
+      <ForumCommentsList refresh={refreshComments}/>
+      <ForumCommentsForm onCommentCreated={toggleRefreshComments}/>
     </>
   );
 }

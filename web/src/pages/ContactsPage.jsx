@@ -4,28 +4,15 @@ import ContactForm from '../components/contacts/contact-form/ContactForm';
 
 function ContactsPage() {
   const [refreshContacts, setRefreshContacts] = useState(false)
-  
+
+  const toggleRefreixContacts = () => setRefreshContacts(!refreshContacts)
   return (
     <>
-      <ContactList/>
-      <ContactForm/>
+      <ContactList refresh={refreshContacts}/>
+      <ContactForm onContactCreated={toggleRefreixContacts}/>
     </>
   )
 }
 
 export default ContactsPage
 
-
-
-// function ClaimsPage() {
-//   const [refreshClaims, setRefreshClaims] = useState(false)
-
-//   const toggleRefreshClaims = () =>  setRefreshClaims(!refreshClaims)
-
-//   return (
-//     <>
-//     <ClaimsList refresh={refreshClaims}/>
-//     <ClaimForm onClaimCreated={toggleRefreshClaims} />
-//     </>
-//   )
-// }

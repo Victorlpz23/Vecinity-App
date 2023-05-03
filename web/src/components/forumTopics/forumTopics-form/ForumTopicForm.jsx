@@ -4,10 +4,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 import forumTopicService from '../../../services/forumTopics';
 
 
-function ForumTopicForm() {
+function ForumTopicForm({ onTopicCreated }) {
   const { register, handleSubmit, setError, formState: { errors } } = useForm({ mode: 'onBlur' });
   const [serverError, setServerError] = useState(undefined);
-  const navigate = useNavigate();
   const { id } = useParams();
 
 
@@ -16,7 +15,7 @@ function ForumTopicForm() {
     forumTopicService.create(id, forumTopic)
       .then(forumTopic => {
         console.info(forumTopic);
-        navigate(`/communities/${id}/forumTopics`);
+        onTopicCreated();
       })
 
       .catch(error => {
