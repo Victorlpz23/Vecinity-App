@@ -19,11 +19,12 @@ function AuthStore({ children }) {
   const navigate = useNavigate();
 
 
+
+
   useEffect(() => {
     async function fetchUser() {
       if (user) {
-        const profile = await userService.get('me');
-        handleUserChange({ ...profile, token: user.token });
+        await reloadUser();
       }
     }
     fetchUser();
@@ -41,6 +42,11 @@ function AuthStore({ children }) {
     setUser(user);
   };
 
+  async function reloadUser() {
+    const profile = await userService.get('me');
+    handleUserChange({ ...profile, token: user.token });
+  }
+
 
 
   const logout = () => {
@@ -52,7 +58,7 @@ function AuthStore({ children }) {
 
   return (
     <>
-      <AuthContext.Provider value={{ user, onUserChange: handleUserChange, logout }}>
+      <AuthContext.Provider value={{ user, reloadUser, onUserChange: handleUserChange, logout }}>
         {children}
       </AuthContext.Provider>
     </>

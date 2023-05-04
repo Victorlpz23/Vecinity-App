@@ -39,15 +39,6 @@ function UserProfile() {
           <p className="text-gray-700 mb-4">Home: {user?.home}</p>
         </div>
       </div>
-
-      <div class="flex items-center justify-center h-64  
-        bg-gradient-to-r 
-        from-orange 
-        to-orange-500 
-        via-green
-        animate-gradient-x
-        ">
-      </div>
     </>
   );
 }

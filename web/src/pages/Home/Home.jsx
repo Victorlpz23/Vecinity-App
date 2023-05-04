@@ -7,15 +7,19 @@ function Home() {
 
   return (
     <>
-      <div className="pt-24 gradient-bg">
+      <div className="pt-24 bg-gradient-to-r 
+        from-orange 
+        to-orange-500 
+        via-green
+        animate-gradient-x">
         <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
 
-          <div className="flex flex-col w-full  lg:w-full justify-center items-start text-center md:text-left pb-40">
-            <p className="uppercase tracking-loose w-full">Neighbours community management app</p>
-            <h1 className="my-4 text-5xl font-bold leading-tight">
+        <div className="flex flex-col w-full  lg:w-full justify-center lg:ps-12 items-start text-center md:text-left pb-40">
+            <p className="uppercase tracking-loose w-full text-white">Neighbours community management app</p>
+            <h1 className="my-4 text-5xl text-white font-bold leading-tight">
               Join your neighbours in Vecinity!
             </h1>
-            <p className="leading-normal text-2xl mb-8">
+            <p className="leading-normal text-2xl mb-8 text-white">
               Discover everything you can do with Vecinity App
             </p>
             <NavLink to="/signup" className="mx-auto lg:mx-60 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
@@ -68,7 +72,7 @@ function Home() {
               <div className="w-full sm:w-1/2 p-6 mt-6 flex flex-col items-center justify-center">
                 <img src="images/mobile2.png" />
               </div>
-              <div className="w-full sm:w-1/2 p-6 mt-6 ">
+              <div className="w-full sm:w-1/2 p-6 flex flex-col items-center justify-center">
                 <div className="align-middle">
                   <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
                     Stay tuned with the community events
@@ -83,7 +87,7 @@ function Home() {
             </div>
 
             <div className="flex flex-wrap">
-              <div className="w-5/6 sm:w-1/2 p-6 ">
+            <div className="w-5/6 sm:w-1/2 p-6 flex flex-col items-center justify-center">
                 <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
                   Connect with your neighbours like never before
                 </h3>
@@ -102,7 +106,7 @@ function Home() {
               <div className="w-full sm:w-1/2 p-6 mt-6">
                 <img src="images/mobile4.png" />
               </div>
-              <div className="w-full sm:w-1/2 p-6 mt-6">
+              <div className="w-full sm:w-1/2 p-6 flex flex-col items-center justify-center">
                 <div className="align-middle">
                   <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
                     Make reservations for your shared facilities instantly
@@ -365,7 +369,11 @@ function Home() {
           </g>
         </g>
       </svg>
-      <section className="mx-auto text-center py-20 mb-8 gradient-bg">
+      <section className="mx-auto text-center py-20 mb-8 pt-24 bg-gradient-to-r 
+        from-orange 
+        to-orange-500 
+        via-green
+        animate-gradient-x">
         <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-black">
           Join Vecinity now!
         </h2>

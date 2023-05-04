@@ -15,9 +15,9 @@ function ClaimItem({ claim, communityId }) {
           </p>
         </div>
         <div class="mb-6 ml-4 mt-2">
-          <h4 class="mb-1.5 text-xl font-semibold">{claim.title}</h4>
+          <h4 class="mb-1.5 text-xl font-semibold">{claim?.title}</h4>
           <p class="text-sm text-neutral-500 dark:text-neutral-300">
-            author
+            {claim?.author?.name}
           </p>
         </div>
       </li>

@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import userService from "../../../services/users";
+import communitiesService from "../../../services/communities";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from '../../../contexts/AuthStore';
 
-function UserUpdate() {
+function CommunitiesForm() {
   const { user } = useContext(AuthContext);
 
 
@@ -159,4 +159,4 @@ function UserUpdate() {
   );
 }
 
-export default UserUpdate;
+export default CommunitiesForm

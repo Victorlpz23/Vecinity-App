@@ -38,6 +38,14 @@ module.exports.confirm = (req, res, next) => {
 module.exports.detail = (req, res, next) => res.json(req.user);
 
 
+module.exports.me = (req, res, next) => {
+  User.findOne({ email: req.user.email })
+    .then((user) => {
+      req.user = user
+    }).catch(next)
+} 
+
+
 module.exports.update = (req, res, next) => {
   if (req.user.id !== req.params.userId) {
     return next(createError(403, "Forbidden"));

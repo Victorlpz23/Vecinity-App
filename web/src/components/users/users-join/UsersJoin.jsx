@@ -6,17 +6,22 @@ import { useNavigate } from 'react-router-dom';
 
 
 function UsersJoin() {
-  const { user } = useContext(AuthContext);
+  const { user, reloadUser } = useContext(AuthContext);
   const { register, handleSubmit, setError, formState: { errors } } = useForm({ mode: 'onBlur' });
   const [serverError, setServerError] = useState();
   const navigate = useNavigate();
 
-
+  useEffect(() => {
+    user.community && navigate(`/communities/${user.community}`);
+  }, [user.community]);
 
   const onCodeSubmit = (code) => {
     communitiesService.join(code)
-      .then(() => {
+      .then(async () => {
         console.info(code);
+        console.log(reloadUser);
+        await reloadUser();
+
       }).catch((error) => console.error(error));
   };
 
@@ -32,11 +37,11 @@ function UsersJoin() {
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-green md:text-2xl dark:text-white">
-               Join your community
+                Join your community
               </h1>
               <div className="w-full sm:w-1/2 p-6">
-              <img src="/images/join-form.png" />
-            </div>
+                <img src="/images/join-form.png" />
+              </div>
               <form onSubmit={handleSubmit(onCodeSubmit)} className="space-y-4 md:space-y-6" action="#">
                 {serverError &&
                   <div

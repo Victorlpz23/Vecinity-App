@@ -28,7 +28,7 @@ function EventsCalendar() {
 
   return (
     <>
-      <div className="flex flex-col items-center mb-4 mt-4">
+      <div className="flex flex-col items-center mb-2 mt-4">
           <Calendar className="bg-white rounded-md shadow-lg p-4" value={value} onClickDay={(value) => displayEvents(value)} />
         </div>
       <div>

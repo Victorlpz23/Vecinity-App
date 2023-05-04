@@ -24,6 +24,7 @@ import ProfilePage from "./pages/ProfilePage";
 import Error404Page from "./pages/Error404Page";
 import ThemeContext from './contexts/ThemeContext';
 import { useContext } from "react";
+import Error403Page from "./pages/Error403Page";
 
 
 
@@ -53,6 +54,7 @@ function App() {
             <Route path="/communities/:id/reservations/:reservationId" element={<ReservationPage />} />
             <Route path="/communities/:id/users/:userId/account" element={<ProfilePage />} />
             <Route path="/communities/:id/users/:userId/settings" element={<SettingsPage />} />
+            <Route path="/403" element={<Error403Page/>} />
             <Route path="*" element={<Error404Page />} />
           </Routes>
           <Footer />

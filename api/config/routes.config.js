@@ -40,6 +40,7 @@ router.get('/users', usersControllers.list);
 // secure.checkRole('admin')
 router.post('/users', usersControllers.create);
 router.get('/users/:id/confirm', usersMid.exists, usersControllers.confirm);
+router.get('/users/me', usersMid.exists, usersControllers.me);
 router.get('/communities/:id/users/:userId', secure.auth, usersMid.exists, usersControllers.detail);
 router.patch('/communities/:id/users/:userId', secure.auth, storage.single('image'), usersControllers.update);
 router.delete('/communities/:id/users/:userId', secure.auth, usersControllers.delete);
