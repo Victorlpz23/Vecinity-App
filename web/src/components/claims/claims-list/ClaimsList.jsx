@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 function ClaimsList({ refresh }) {
   const { id } = useParams();
-  const [claims, setClaims] = useState([]);
+  const [claims, setClaims] = useState();
 
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function ClaimsList({ refresh }) {
 
   return (
     <>
-      {!claims ? (
+      {claims === undefined  ? (
         <div role="status" class="max-w-sm animate-pulse">
           <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
           <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>

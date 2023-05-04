@@ -25,7 +25,7 @@ function UserProfile() {
       </div>
 
       <div className="flex flex-col items-center">
-        <div className="w-full h-52 bg-greensoft flex items-center justify-center">
+        <div className="w-full h-52 flex items-center justify-center">
           <img
             className="w-32 h-32 rounded-full object-cover"
             src="https://imglarger.com/Images/before-after/ai-image-enlarger-1-after-2.jpg"
@@ -33,11 +33,20 @@ function UserProfile() {
           />
         </div>
         <div className="w-full max-w-md p-4">
-          <h1 className="text-3xl font-bold mb-2">{user?.name}</h1>
-          <p className="text-gray-700 mb-4">{user?.lastName}</p>
-          <p className="text-gray-700 mb-4">{user?.community?.address}</p>
-          <p className="text-gray-700 mb-4">{user?.home}</p>
+          <h1 className="text-3xl font-bold mb-2">Name: {user?.name}</h1>
+          <p className="text-gray-700 mb-4">Last Name: {user?.lastName}</p>
+          <p className="text-gray-700 mb-4">Address: {user?.community?.address}</p>
+          <p className="text-gray-700 mb-4">Home: {user?.home}</p>
         </div>
+      </div>
+
+      <div class="flex items-center justify-center h-64  
+        bg-gradient-to-r 
+        from-orange 
+        to-orange-500 
+        via-green
+        animate-gradient-x
+        ">
       </div>
     </>
   );
