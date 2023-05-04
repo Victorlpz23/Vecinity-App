@@ -11,15 +11,16 @@ function UsersJoin() {
   const [serverError, setServerError] = useState();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    user.community && navigate(`/communities/${user.community}`);
-  }, [user.community]);
+  // useEffect(() => {
+  //   user.community && navigate(`/communities/${user.community}`);
+  // }, [user.community]);
 
   const onCodeSubmit = (code) => {
     communitiesService.join(code)
       .then(async () => {
         console.info(code);
-        console.log(reloadUser);
+        navigate(`/welcome`)
+        // console.log(reloadUser);
         await reloadUser();
 
       }).catch((error) => console.error(error));

@@ -1,42 +1,8 @@
-import React, { useContext, useState } from "react";
-import { useForm } from "react-hook-form";
-import userService from "../../../services/users";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from '../../../contexts/AuthStore';
+import React from "react";
+
 
 function UserUpdate() {
-  const { user } = useContext(AuthContext);
-
-
-  const {
-    register,
-    handleSubmit,
-    setError,
-    formState: { errors },
-  } = useForm({ mode: "onBlur" });
-  const [serverError, setServerError] = useState();
-  const navigate = useNavigate();
-
-  const onUserSubmit = (user) => {
-    setServerError();
-    userService
-      .update(user)
-      .then((user) => {
-        console.info(user);
-        navigate("/login");
-      })
-
-      .catch((error) => {
-        const errors = error.response?.data?.errors;
-        if (errors) {
-          Object.keys(errors).forEach((inputName) =>
-            setError(inputName, { message: errors[inputName] })
-          );
-        } else {
-          setServerError(error.message);
-        }
-      });
-  };
+  
 
   return (
     <>
@@ -48,35 +14,7 @@ function UserUpdate() {
                 Create an account
               </h1>
               <form
-                onSubmit={handleSubmit(onUserSubmit)}
-                className="space-y-4 md:space-y-6"
-                action="#"
-              >
-                {serverError && (
-                  <div
-                    className="flex p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
-                    role="alert"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      className="flex-shrink-0 inline w-5 h-5 mr-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                    <span className="sr-only">Info</span>
-                    <div>
-                      <span className="font-medium">{serverError}</span>
-                    </div>
-                  </div>
-                )}
-
+              
                 {/* Name */}
 
                 <div>
@@ -124,32 +62,14 @@ function UserUpdate() {
             dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 pl-10 p-2.5 ${errors.name
                         ? `bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500
             focus:border-red-500 block w-full p-2.5 dark:bg-red-100 dark:border-red-400` : ''}`} id="name"
-                      type="text" placeholder={user.name} {...register('name', { required: "Name is required", })} />
-                  </div>
-                  <div>
-                    {errors.name && (
-                      <p className="mt-2 text-sm text-red-600 dark:text-red-500">
-                        <span className="font-medium">Oops!</span>
-                        {errors.name?.message}{" "}
-                      </p>
-                    )}
+                      type="text" placeholder=name />
                   </div>
                 </div>
-
                 <button
-                  type="submit"
                   className="w-full text-white bg-orange hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
-                  Create an account
+                  Create community
                 </button>
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Already have an account?{" "}
-                  <Link to="/login"
-                    className="font-medium text-green hover:underline dark:text-primary-500"
-                  >
-                    Login here
-                  </Link>
-                </p>
               </form>
             </div>
           </div>

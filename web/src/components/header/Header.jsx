@@ -9,7 +9,7 @@ function Header({ title }) {
         via-green
         animate-gradient-x">
         <div className="container px-1 py-2">
-          <h1 className="text-[20px] ps-5 font-bold text-white m-0">{title}</h1>
+          <h1 className="text-[20px] ps-5 font-bold text-white m-0 dark:text-black">{title}</h1>
         </div>
       </div>
     </>

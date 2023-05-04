@@ -25,6 +25,7 @@ import Error404Page from "./pages/Error404Page";
 import ThemeContext from './contexts/ThemeContext';
 import { useContext } from "react";
 import Error403Page from "./pages/Error403Page";
+import WelcomePage from "./pages/WelcomePage";
 
 
 
@@ -41,6 +42,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/create-join" element={<CreateJoinPage />} />
             <Route path="/join" element={<JoinPage />} />
+            <Route path="/welcome" element={<PrivateRoute><WelcomePage /></PrivateRoute>} />
             <Route path="/communities/create" element={<CommunityCreatePage />} />
             <Route path="/communities/:id" element={<PrivateRoute><CommunityHome /></PrivateRoute>} />
             <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage /></PrivateRoute>} />
