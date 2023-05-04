@@ -25,7 +25,7 @@ function UserProfile() {
       </div>
 
       <div className="flex flex-col items-center">
-        <div className="w-full h-52 bg-orangesoft flex items-center justify-center">
+        <div className="w-full h-52 bg-greensoft flex items-center justify-center">
           <img
             className="w-32 h-32 rounded-full object-cover"
             src="https://imglarger.com/Images/before-after/ai-image-enlarger-1-after-2.jpg"

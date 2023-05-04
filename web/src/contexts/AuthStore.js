@@ -13,6 +13,7 @@ const restoreUserFromLocalStorage = () => {
     return undefined;
   }
 };
+
 function AuthStore({ children }) {
   const [user, setUser] = useState(restoreUserFromLocalStorage());
   const navigate = useNavigate();

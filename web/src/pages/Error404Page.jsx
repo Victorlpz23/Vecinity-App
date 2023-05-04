@@ -16,4 +16,4 @@ function Error404Page() {
   )
 }
 
-export default Error404Page
+export default Error404Page;

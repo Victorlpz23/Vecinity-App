@@ -21,36 +21,43 @@ import ForumTopicPage from "./pages/ForumTopicPage";
 import CreateJoinPage from "./pages/CreateJoinPage";
 import CommunityCreatePage from "./pages/CommunityCreatePage";
 import ProfilePage from "./pages/ProfilePage";
+import Error404Page from "./pages/Error404Page";
+import ThemeContext from './contexts/ThemeContext';
+import { useContext } from "react";
+
 
 
 function App() {
+  const { darkMode } = useContext(ThemeContext);
   return (
     <>
-      <AuthStore>
-        <Navbar />
+      <div className={darkMode ? 'dark' : 'light'}>
+        <AuthStore>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/create-join" element={<CreateJoinPage/>} />
+            <Route path="/create-join" element={<CreateJoinPage />} />
             <Route path="/join" element={<JoinPage />} />
-            <Route path="/communities/create" element={<CommunityCreatePage/> } />
+            <Route path="/communities/create" element={<CommunityCreatePage />} />
             <Route path="/communities/:id" element={<PrivateRoute><CommunityHome /></PrivateRoute>} />
-            <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage/></PrivateRoute>} />
-            <Route path="/communities/:id/claims/:claimId" element={<ClaimPage/>} />
-            <Route path="/communities/:id/events" element={<PrivateRoute><EventsPage/></PrivateRoute> } />
-            <Route path="/communities/:id/forumTopics" element={<ForumTopicsPage/>} />
-            <Route path="/communities/:id/forumTopics/:forumTopicId" element={<ForumTopicPage/> } />
-            <Route path="/communities/:id/contacts" element={<ContactsPage/>} />
-            <Route path="/communities/:id/contacts/:contactId" element={<ContactPage/>} />
-            <Route path="/communities/:id/reservations" element={<ReservationsPage/>} />
-            <Route path="/communities/:id/reservations/:reservationId" element={<ReservationPage/>} />
-            <Route path="/communities/:id/users/:userId/account" element={<ProfilePage/> } />
-            <Route path="/communities/:id/users/:userId/settings" element={<SettingsPage/>} />
-            {/* <Route path="*" element={<Navigate to={"/"} />} /> */}
+            <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage /></PrivateRoute>} />
+            <Route path="/communities/:id/claims/:claimId" element={<ClaimPage />} />
+            <Route path="/communities/:id/events" element={<PrivateRoute><EventsPage /></PrivateRoute>} />
+            <Route path="/communities/:id/forumTopics" element={<ForumTopicsPage />} />
+            <Route path="/communities/:id/forumTopics/:forumTopicId" element={<ForumTopicPage />} />
+            <Route path="/communities/:id/contacts" element={<ContactsPage />} />
+            <Route path="/communities/:id/contacts/:contactId" element={<ContactPage />} />
+            <Route path="/communities/:id/reservations" element={<ReservationsPage />} />
+            <Route path="/communities/:id/reservations/:reservationId" element={<ReservationPage />} />
+            <Route path="/communities/:id/users/:userId/account" element={<ProfilePage />} />
+            <Route path="/communities/:id/users/:userId/settings" element={<SettingsPage />} />
+            <Route path="*" element={<Error404Page />} />
           </Routes>
-        <Footer />
-      </AuthStore>
+          <Footer />
+        </AuthStore>
+      </div>
     </>
   );
 }
