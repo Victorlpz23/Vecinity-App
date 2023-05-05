@@ -6,16 +6,20 @@ function PrivateRoute({ children }) {
   const { user } = useContext(AuthContext)
   const { id } = useParams()
 
+  
+
   if (!user) {
     return <Navigate to="/login" replace={true} />
-  } else if (user) {
-    return <>
-      {children}
-      </>
-    } else {
-      return <Navigate to="/403" replace={true} />
-    
-  }
+  } else if (user.community.id === id  || user.community === id ) {
+    console.log(user.community)
+    return <>{children}</>
+  // } else {
+  //   return <Navigate to="/403" replace={true} />
+  // }
 }
+}
+    
+  
+
 
 export default PrivateRoute

@@ -3,7 +3,8 @@ import Calendar from 'react-calendar';
 import './EventsCalendar.css';
 import eventsService from '../../../services/events';
 import { useParams } from 'react-router-dom';
-import moment from 'moment'
+import moment from 'moment';
+import EventItem from '../event-item/EventItem';
 
 function EventsCalendar() {
 
@@ -29,20 +30,30 @@ function EventsCalendar() {
   return (
     <>
       <div className="flex flex-col items-center mb-2 mt-4">
-          <Calendar className="bg-white rounded-md shadow-lg p-4" value={value} onClickDay={(value) => displayEvents(value)} />
-        </div>
+        <Calendar className="bg-white rounded-md shadow-lg p-4" value={value} onClickDay={(value) => displayEvents(value)} />
+      </div>
       <div>
         {daySelected.length > 0 && <div>
           {
             eventsFound?.length
-              ? eventsFound.map(event => <li key={event.id}>{event.title}</li>)
-              : <p>No events</p>
+              ? eventsFound.map(event => <EventItem key={event.id} event={event} communityId={id} ></EventItem>)
+              : <section className="bg-white dark:bg-gray-900">
+              <div className="flex flex-col items-center justify-center px-6 py-2 mx-auto">
+                <div className="w-full bg-white rounded-lg  shadow-orange shadow-sm dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                  <div className="p-6 space-y-2 md:space-y-2 sm:p-8">
+                    <ul>
+                      <li className='font-bold text-green mb-1'>No events</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
           }
         </div>
         }
 
       </div>
-      </>
+    </>
   );
 }
 

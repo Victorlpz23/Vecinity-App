@@ -10,6 +10,7 @@ module.exports.list = (req, res, next) => {
 
 
 module.exports.create = (req, res, next) => {
+  console.log(req.body)
   req.body.community = req.user.community
   req.body.author = req.user.id
   Claim.create(req.body)

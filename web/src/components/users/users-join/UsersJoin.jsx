@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../contexts/AuthStore';
 import * as communitiesService from '../../../services/communities';
 import { useForm } from 'react-hook-form';
@@ -6,22 +6,18 @@ import { useNavigate } from 'react-router-dom';
 
 
 function UsersJoin() {
-  const { user, reloadUser } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const { register, handleSubmit, setError, formState: { errors } } = useForm({ mode: 'onBlur' });
   const [serverError, setServerError] = useState();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   user.community && navigate(`/communities/${user.community}`);
-  // }, [user.community]);
 
   const onCodeSubmit = (code) => {
     communitiesService.join(code)
-      .then(async () => {
-        console.info(code);
-        navigate(`/welcome`)
-        // console.log(reloadUser);
-        await reloadUser();
+      .then((userJoin) => {
+        user.community = userJoin.community
+        navigate(`/communities/${user.community}`)
+
 
       }).catch((error) => console.error(error));
   };
@@ -81,9 +77,6 @@ function UsersJoin() {
                       {errors.code?.message} </p>}
                   </div>
                 </div>
-
-
-
                 <button type="submit" className="w-full text-white bg-orange hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Join</button>
               </form>
             </div>

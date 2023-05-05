@@ -6,13 +6,13 @@ import PageLayout from '../components/layout/PageLayout';
 function ForumPage() {
   const [refreshTopics, setRefreshTopics] = useState(false)
 
-  const toggleRefreshTopics = () => setRefreshTopics(!refreshTopics);
+  const toggleRefreshReservations = () => setRefreshTopics(!refreshTopics);
 
   return (
     <>
       <PageLayout title="Topics">
       <ForumTopicsList refresh={refreshTopics}/>
-      <ForumTopicForm onTopicCreated={toggleRefreshTopics} />
+      <ForumTopicForm onTopicCreated={toggleRefreshReservations} />
       </PageLayout>
     </>
   )

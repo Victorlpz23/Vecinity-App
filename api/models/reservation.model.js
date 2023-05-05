@@ -6,13 +6,14 @@ const reservationSchema = new Schema({
     type: String,
     required: "Facility is required",
   },
-  date: { 
-    day: { type: Date },
-    time: { 
-      type: String,
-      enum: ["10h-13h", "13h-16h", "16h-19h", "19h-22h"]
-    }
+  date: {
+    type: Date,
+    required: "Please select a date"
   },
+  // time: { 
+  //   type: String,
+  //   enum: ["10h-13h", "13h-16h", "16h-19h", "19h-22h"]
+  // }
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
@@ -21,7 +22,7 @@ const reservationSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Community',
   },
- 
+
 }, {
   timestamps: true,
   toJSON: {

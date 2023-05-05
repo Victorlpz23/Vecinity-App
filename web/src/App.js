@@ -46,16 +46,16 @@ function App() {
             <Route path="/communities/create" element={<CommunityCreatePage />} />
             <Route path="/communities/:id" element={<PrivateRoute><CommunityHome /></PrivateRoute>} />
             <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage /></PrivateRoute>} />
-            <Route path="/communities/:id/claims/:claimId" element={<ClaimPage />} />
+            <Route path="/communities/:id/claims/:claimId" element={<PrivateRoute><ClaimPage /></PrivateRoute>} />
             <Route path="/communities/:id/events" element={<PrivateRoute><EventsPage /></PrivateRoute>} />
-            <Route path="/communities/:id/forumTopics" element={<ForumTopicsPage />} />
-            <Route path="/communities/:id/forumTopics/:forumTopicId" element={<ForumTopicPage />} />
-            <Route path="/communities/:id/contacts" element={<ContactsPage />} />
-            <Route path="/communities/:id/contacts/:contactId" element={<ContactPage />} />
-            <Route path="/communities/:id/reservations" element={<ReservationsPage />} />
-            <Route path="/communities/:id/reservations/:reservationId" element={<ReservationPage />} />
-            <Route path="/communities/:id/users/:userId/account" element={<ProfilePage />} />
-            <Route path="/communities/:id/users/:userId/settings" element={<SettingsPage />} />
+            <Route path="/communities/:id/forumTopics" element={<PrivateRoute><ForumTopicsPage /></PrivateRoute>} />
+            <Route path="/communities/:id/forumTopics/:forumTopicId" element={<PrivateRoute><ForumTopicPage /></PrivateRoute>} />
+            <Route path="/communities/:id/contacts" element={<PrivateRoute><ContactsPage /></PrivateRoute>} />
+            <Route path="/communities/:id/contacts/:contactId" element={<PrivateRoute><ContactPage /></PrivateRoute>} />
+            <Route path="/communities/:id/reservations" element={<PrivateRoute><ReservationsPage /></PrivateRoute>} />
+            <Route path="/communities/:id/reservations/:reservationId" element={<PrivateRoute><ReservationPage /></PrivateRoute>} />
+            <Route path="/communities/:id/users/:userId/account" element={<PrivateRoute><ProfilePage /></PrivateRoute>} />
+            <Route path="/communities/:id/users/:userId/settings" element={<PrivateRoute><SettingsPage /></PrivateRoute>} />
             <Route path="/403" element={<Error403Page/>} />
             <Route path="*" element={<Error404Page />} />
           </Routes>

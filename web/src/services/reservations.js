@@ -1,11 +1,9 @@
-import http from './base-api'
+import http from './base-api';
 
-const list = (communityId) => http.get(`/communities/${communityId}/reservations`)
- 
+const list = (communityId) => http.get(`/communities/${communityId}/reservations`);
 
-  const detail = (communityId, reservationId) => http.get(`/communities/${communityId}/reservations/${reservationId}`)
- ;
+const create = (communityId, reservation) => http.post(`/communities/${communityId}/reservations`, reservation)
 
-export default { list, detail }
+export default { list, create }
 
 

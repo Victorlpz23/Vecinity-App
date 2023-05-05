@@ -7,8 +7,9 @@ function Footer() {
 
   return (
     <div>
-      <footer className="fixed bottom-0 left-0 z-20 w-full p-4 bg-white  md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
-        <div class="sticky bottom-0 mb-2 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 lg:hidden md:hidden">
+      <footer className="fixed bottom-0 left-0 z-20 w-full p-0 bg-white  md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+        {user?.community ? (
+          <div class="sticky bottom-0 mb-2 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 lg:hidden md:hidden">
           <div class="grid h-full max-w-lg grid-cols-3 mx-auto border-b">
 
             {/* My Community  */}
@@ -37,6 +38,31 @@ function Footer() {
             </Link>
           </div>
         </div>
+        ) : (
+
+          <div class="sticky bottom-0 mb-2 left-0 z-50 w-full h-12 bg-orangesoft border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600 lg:hidden md:hidden">
+          <div class="grid h-full max-w-lg grid-cols-3 mx-auto border-b">
+
+            {/* My Community  */}
+
+            <Link to={`/login`} class="inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600">
+              <span class="text-sm text-white dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Login</span>
+            </Link>
+
+            {/* Events */}
+
+            <Link to={`/signup`} class="inline-flex flex-col items-center justify-center font-medium px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+              <span class="text-sm text-white dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Sign Up</span>
+            </Link>
+
+            {/* Settings */}
+
+            <Link to={`/join`} type="button" class="inline-flex flex-col items-center justify-center px-5 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group border-x dark:border-gray-600">
+             <span class="text-sm text-white dark:text-gray-400 group-hover:text-orange dark:group-hover:text-blue-500">Join</span>
+            </Link>
+          </div>
+        </div> )}
+       
 
 
 
@@ -44,20 +70,7 @@ function Footer() {
 
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="/" className="hover:underline">Vecinity App™</a>. All Rights Reserved.
         </span>
-        {/* <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 lg:mt-0">
-          <li>
-            <p href="#" className="mr-4 hover:underline md:mr-6">About</p>
-          </li>
-          <li>
-            <p href="#" className="mr-4 hover:underline md:mr-6">Privacy Policy</p>
-          </li>
-          <li>
-            <p href="#" className="mr-4 hover:underline md:mr-6">Licensing</p>
-          </li>
-          <li>
-            <p href="#" className="hover:underline">Contact</p>
-          </li>
-        </ul> */}
+      
       </footer>
     </div>
   );

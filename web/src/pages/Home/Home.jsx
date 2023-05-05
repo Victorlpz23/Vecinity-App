@@ -14,7 +14,7 @@ function Home() {
         animate-gradient-x">
         <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
 
-        <div className="flex flex-col w-full  lg:w-full justify-center lg:ps-12 items-start text-center md:text-left pb-40">
+          <div className="flex flex-col w-full  lg:w-full justify-center lg:ps-12 items-start text-center md:text-left pb-40">
             <p className="uppercase tracking-loose w-full text-white">Neighbours community management app</p>
             <h1 className="my-4 text-5xl text-white font-bold leading-tight">
               Join your neighbours in Vecinity!
@@ -87,7 +87,7 @@ function Home() {
             </div>
 
             <div className="flex flex-wrap">
-            <div className="w-5/6 sm:w-1/2 p-6 flex flex-col items-center justify-center">
+              <div className="w-5/6 sm:w-1/2 p-6 flex flex-col items-center justify-center">
                 <h3 className="text-3xl text-gray-800 font-bold leading-none mb-3">
                   Connect with your neighbours like never before
                 </h3>
@@ -348,7 +348,7 @@ function Home() {
         </div>
       </section>
 
-      <svg className="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+      {/* <svg className="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
             <g className="wave" fill="#F3F4F6">
@@ -368,7 +368,7 @@ function Home() {
             </g>
           </g>
         </g>
-      </svg>
+      </svg> */}
       <section className="mx-auto text-center py-20 mb-8 pt-24 bg-gradient-to-r 
         from-orange 
         to-orange-500 
@@ -377,8 +377,8 @@ function Home() {
         <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-black">
           Join Vecinity now!
         </h2>
-        <div className="w-full mb-4">
-          <div className="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
+        <div className="w-full mb-4 mt-8">
+          <div className="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t mt-8"></div>
         </div>
         <Link to='/signup' className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-6 mb-0 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
           Sign up

@@ -18,16 +18,30 @@ function ClaimsList({ refresh }) {
 
   return (
     <>
-      {claims === undefined  ? (
-        <div role="status" class="max-w-sm animate-pulse">
-          <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
-          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
-          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
-          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[330px] mb-2.5"></div>
-          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5"></div>
-          <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
-          <span class="sr-only">Loading...</span>
+      {claims === undefined ? (
+        <div class="w-60 h-20 mb-12 rounded-md mx-auto mt-12">
+          <div class="flex animate-pulse flex-row items-center h-full justify-center space-x-5">
+            <div class="w-6 bg-gray-300 h-6 rounded-full ">
+            </div>
+            <div class="flex flex-col space-y-3">
+              <div class="w-24 bg-gray-300 h-3 rounded-md ">
+              </div>
+              <div class="w-16 bg-gray-300 h-3 rounded-md ">
+              </div>
+            </div>
+          </div>
+          <div class="flex animate-pulse flex-row items-center h-full justify-center space-x-5">
+            <div class="w-6 bg-gray-300 h-6 rounded-full ">
+            </div>
+            <div class="flex flex-col space-y-3">
+              <div class="w-24 bg-gray-300 h-3 rounded-md ">
+              </div>
+              <div class="w-16 bg-gray-300 h-3 rounded-md ">
+              </div>
+            </div>
+          </div>
         </div>
+
       )
         : (
           <>
