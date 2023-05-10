@@ -41,7 +41,7 @@ function Navbar() {
                 </>
               ) : (
                 <>
-                  <NavLink to="/communities/join" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-orange">
+                  <NavLink to="/join" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-orange">
                     Join
                   </NavLink>
                   <NavLink to="/login" className="block py-2 pl-3 pr-4 mb-2 text-white bg-orange rounded md:bg-transparent md:text-orange md:p-0 md:dark:text-orange">

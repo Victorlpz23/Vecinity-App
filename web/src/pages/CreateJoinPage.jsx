@@ -5,7 +5,7 @@ function CreateJoinPage() {
   return (
     <>
       <div className="bg-white border-b py-8">
-        <div className="container max-w-5xl mx-auto m-8">
+        <div className="max-w-5xl mx-auto m-8">
           <h2 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
             Welcome to Vecinity App
             <br />
@@ -27,18 +27,18 @@ function CreateJoinPage() {
               </p>
               <Link
                 to="/join"
-                className="mx-auto lg:mx-0 hover:underline bg-orange text-gray-800 font-bold rounded-full mt-6 mb-0 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+                className="mx-auto lg:mx-0 hover:underline bg-orange text-gray-800 font-bold rounded-full -mt-6 mb-0 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
               >
-                Join your community
+                Join
               </Link>
             </div>
             <div className="w-full sm:w-1/2 p-6">
-              <img src="/images/mobile-neighbours.png" />
+              <img src="/images/mobile-neighbours.png" alt="neighbours" />
             </div>
 
             <div className="flex flex-wrap flex-col-reverse sm:flex-row">
               <div className="w-full sm:w-1/2 p-6 mt-6 flex flex-col items-center justify-center">
-                <img src="images/mobile-manager.png" />
+                <img src="images/mobile-manager.png" alt="manager" />
               </div>
               <div className="w-full sm:w-1/2 p-6 mt-6 ">
                 <div className="align-middle">
@@ -55,7 +55,7 @@ function CreateJoinPage() {
                     to="/communities/create"
                     className="mx-auto lg:mx-0 hover:underline bg-orange text-gray-800 font-bold rounded-full mt-6 mb-0 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
                   >
-                    Create community
+                    Create 
                   </Link>
                 </div>
               </div>
