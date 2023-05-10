@@ -1,5 +1,4 @@
 import React from 'react';
-import './Home.css';
 import { Link, NavLink } from 'react-router-dom';
 
 
@@ -14,7 +13,7 @@ function Home() {
         animate-gradient-x">
         <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
 
-          <div className="flex flex-col w-full  lg:w-full justify-center lg:ps-12 items-start text-center md:text-left pb-40">
+          <div className="flex flex-col w-full  lg:w-full justify-center lg:ps-12 items-start text-center md:text-left pb-40 lg:mb-8">
             <p className="uppercase tracking-loose w-full text-white">Neighbours community management app</p>
             <h1 className="my-4 text-5xl text-white font-bold leading-tight">
               Join your neighbours in Vecinity!

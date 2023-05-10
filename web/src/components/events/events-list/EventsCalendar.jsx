@@ -29,19 +29,19 @@ function EventsCalendar() {
   return (
     <>
       <div className="flex flex-col items-center mb-2 mt-4">
-        <Calendar className="bg-white rounded-md shadow-lg p-4" value={value} onClickDay={(value) => displayEvents(value)} />
+        <Calendar className="rounded-md shadow-lg p-4 text-center" value={value} onClickDay={(value) => displayEvents(value)} />
       </div>
       <div>
         {daySelected.length > 0 && <div>
           {
             eventsFound?.length
               ? eventsFound.map(event => <EventItem key={event.id} event={event} communityId={id} ></EventItem>)
-              : <section className="bg-white dark:bg-gray-900">
-              <div className="flex flex-col items-center justify-center px-6 py-2 mx-auto">
-                <div className="w-full bg-gray-100 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+              : <section className="bg-white dark:bg-gray-800">
+              <div className="flex flex-col items-center justify-center px-6 py-2 mx-auto ">
+                <div className="w-full bg-gray-100 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-900 dark:border-gray-700">
                   <div className="p-6 space-y-2 md:space-y-2 sm:p-8">
                     <ul>
-                      <li className='font-bold text-green mb-1 text-center'>No events</li>
+                      <li className='font-bold text-green mb-1 text-center '>No events</li>
                     </ul>
                   </div>
                 </div>
