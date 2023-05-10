@@ -11,7 +11,6 @@ function PrivateRoute({ children }) {
   if (!user) {
     return <Navigate to="/login" replace={true} />
   } else if (user.community.id === id  || user.community === id ) {
-    console.log(user.community)
     return <>{children}</>
   // } else {
   //   return <Navigate to="/403" replace={true} />

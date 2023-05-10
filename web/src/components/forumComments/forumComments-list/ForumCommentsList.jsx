@@ -17,8 +17,8 @@ function ForumCommentsList({ refresh }) {
   return (
     <>
       {forumComments === undefined ? (
-        <div className="flex flex-col items-center justify-center px-6 py-2 mx-auto md:h-screen lg:py-0 mb-20">
-          <div className="w-full bg-white rounded-lg shadow shadow-orange dark:border md:mt-0  xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div className="flex flex-col items-center justify-center px-6 py-2 mx-auto mb-20">
+          <div className="w-full bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
             <div className='flex justify-center mt-5 mb-3'>
               <div role="status" class="max-w-sm animate-pulse">
                 <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>

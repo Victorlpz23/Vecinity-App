@@ -22,7 +22,6 @@ function EventsCalendar() {
 
   const displayEvents = (day) => {
     const dayString = moment(day).format("YYYY-MM-DD").toString();
-    console.log(dayString);
     setDaySelected(dayString);
   };
 

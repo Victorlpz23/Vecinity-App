@@ -4,7 +4,6 @@ module.exports.list = (req, res, next) => {
   Contact.find({ community: req.params.id })
     .populate('community')
     .then((contact) => {
-      console.log(req.params.communityId)
       res.json(contact)
       })
     .catch(next);
