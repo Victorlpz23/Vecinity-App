@@ -28,14 +28,14 @@ function EventForm() {
 
   return (
     <>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
-          <div className="w-full bg-white rounded-lg  shadow-orange shadow-sm dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-            <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+      <section className="bg-white dark:bg-gray-800 pb-20">
+        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-6">
+          <div className="w-full bg-gray-100 rounded-lg dark:border shadow-sm md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-900 dark:border-gray-700">
+            <div className="p-6 space-y-4 md:space-y-6 sm:p-8 shadow">
               <h1 className="text-xl font-bold leading-tight text-center tracking-tight text-green md:text-2xl dark:text-white">
                 Add a new event
               </h1>
-              <form onSubmit={handleSubmit(onEventSubmit)} className="space-y-4 md:space-y-6" action="#">
+              <form onSubmit={handleSubmit(onEventSubmit)} className="space-y-4 md:space-y-6 shadow" action="#">
               {serverError &&
                   <div
                     className="flex p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"

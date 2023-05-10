@@ -99,7 +99,7 @@ function UserProfile() {
             <div className='ml-3'>
               <h1 className="text-green mb-4 font-bold">Name: </h1>
               <p className="text-green mb-4 font-bold">Last Name: </p>
-              <p className="text-green mb-4 font-bold">Adress: </p>
+              <p className="text-green mb-4 font-bold">Address: </p>
               <p className="text-green mb-4 font-bold">Home: </p>
             </div>
             <div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReservationsList from '../components/reservations/reservations-list/ReservationsList';
 import ReservationForm from '../components/reservations/reservation-form/ReservationForm';
+import PageLayout from '../components/layout/PageLayout';
 
 
 function ReservationsPage() {
@@ -11,8 +12,10 @@ function ReservationsPage() {
 
   return (
     <>
+    <PageLayout title="Reservations">
     <ReservationForm onTopicCreated={toggleRefreshTopics} />
     <ReservationsList refresh={refreshTopics} />
+    </PageLayout>
     </>
   );
 }

@@ -11,9 +11,9 @@ function ClaimsPage() {
 
   return (
     <>
-      <PageLayout title="Claims" >
-        <ClaimsList refresh={refreshClaims} />
-        <ClaimForm onClaimCreated={toggleRefreshClaims} />
+      <PageLayout title="Claims">
+          <ClaimsList refresh={refreshClaims} />
+          <ClaimForm onClaimCreated={toggleRefreshClaims} />
       </PageLayout>
     </>
   );
