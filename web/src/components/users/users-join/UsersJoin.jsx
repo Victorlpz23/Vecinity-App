@@ -16,7 +16,7 @@ function UsersJoin() {
     communitiesService.join(code)
       .then((userJoin) => {
         user.community = userJoin.community;
-        navigate(`/communities/${user.community}`);
+        navigate(`/welcome/${user.community}`);
 
 
       }).catch((error) => console.error(error));

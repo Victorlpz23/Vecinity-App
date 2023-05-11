@@ -68,7 +68,7 @@ function Footer() {
 
         {/* Footer Info  */}
 
-        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="/" className="hover:underline">Vecinity App™</a>. All Rights Reserved.
+        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 ms-4">© 2023 <a href="/" className="hover:underline">Vecinity App™</a>. All Rights Reserved.
         </span>
       
       </footer>

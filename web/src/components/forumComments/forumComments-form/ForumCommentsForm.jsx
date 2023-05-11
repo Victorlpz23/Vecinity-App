@@ -1,13 +1,12 @@
 import React from "react";
 import { useForm } from 'react-hook-form';
 import forumCommentsService from '../../../services/forumComments';
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 function ForumCommentsForm({ onCommentCreated }) {
   const { register, handleSubmit, setValue } = useForm();
   const { id, forumTopicId } = useParams();
-  const navigate = useNavigate();
 
   const onCommentSubmit = (comment) => {
     forumCommentsService.create(id, forumTopicId, comment)

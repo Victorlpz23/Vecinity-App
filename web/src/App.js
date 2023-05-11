@@ -42,7 +42,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/create-join" element={<CreateJoinPage />} />
             <Route path="/join" element={<JoinPage />} />
-            <Route path="/welcome" element={<PrivateRoute><WelcomePage /></PrivateRoute>} />
+            <Route path="/welcome/:id" element={<WelcomePage />} />
             <Route path="/communities/create" element={<CommunityCreatePage />} />
             <Route path="/communities/:id" element={<PrivateRoute><CommunityHome /></PrivateRoute>} />
             <Route path="/communities/:id/claims" element={<PrivateRoute><ClaimsPage /></PrivateRoute>} />
