@@ -57,7 +57,7 @@ function UsersJoin() {
                       <label htmlFor="code" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Code</label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <svg width="25px" height="25px" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M2.5 9.5L12 4l9.5 5.5" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 21v-1a5 5 0 015-5v0a5 5 0 015 5v1" stroke="#809d7b" stroke-width="2"></path><path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="#809d7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                          <svg width="25px" height="25px" strokeWidth="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M2.5 9.5L12 4l9.5 5.5" stroke="#809d7b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path><path d="M7 21v-1a5 5 0 015-5v0a5 5 0 015 5v1" stroke="#809d7b" strokeWidth="2"></path><path d="M12 15a3 3 0 100-6 3 3 0 000 6z" stroke="#809d7b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path></svg>
                         </div>
                         <input className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg
                         focus:ring-primary-600 focus:border-primary-600 block w-full  dark:bg-gray-700 dark:border-gray-600

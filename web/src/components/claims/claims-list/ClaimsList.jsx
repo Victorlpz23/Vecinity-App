@@ -19,24 +19,24 @@ function ClaimsList({ refresh }) {
   return (
     <>
       {claims === undefined ? (
-        <div class="w-60 h-20 mb-24 rounded-md mx-auto mt-12">
-          <div class="flex animate-pulse flex-row items-center h-full justify-center space-x-5">
-            <div class="w-6 bg-gray-300 h-6 rounded-full ">
+        <div className="w-60 h-20 mb-24 rounded-md mx-auto mt-12">
+          <div className="flex animate-pulse flex-row items-center h-full justify-center space-x-5">
+            <div className="w-6 bg-gray-300 h-6 rounded-full ">
             </div>
-            <div class="flex flex-col space-y-3">
-              <div class="w-24 bg-gray-300 h-3 rounded-md ">
+            <div className="flex flex-col space-y-3">
+              <div className="w-24 bg-gray-300 h-3 rounded-md ">
               </div>
-              <div class="w-16 bg-gray-300 h-3 rounded-md ">
+              <div className="w-16 bg-gray-300 h-3 rounded-md ">
               </div>
             </div>
           </div>
-          <div class="flex animate-pulse flex-row items-center h-full justify-center space-x-5">
-            <div class="w-6 bg-gray-300 h-6 rounded-full ">
+          <div className="flex animate-pulse flex-row items-center h-full justify-center space-x-5">
+            <div className="w-6 bg-gray-300 h-6 rounded-full ">
             </div>
-            <div class="flex flex-col space-y-3">
-              <div class="w-24 bg-gray-300 h-3 rounded-md ">
+            <div className="flex flex-col space-y-3">
+              <div className="w-24 bg-gray-300 h-3 rounded-md ">
               </div>
-              <div class="w-16 bg-gray-300 h-3 rounded-md ">
+              <div className="w-16 bg-gray-300 h-3 rounded-md ">
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ function ClaimsList({ refresh }) {
         : (
           <>
             <div className="flex flex-col items-center px-6 py-2 mx-auto  lg:py-0 mb-20">
-              <ol class="border-l border-neutral-300 dark:border-neutral-500">
+              <ol className="border-l border-neutral-300 dark:border-neutral-500">
                 {claims.map((claim) =>
                   <ClaimItem claim={claim} key={claim.id} communityId={id} />
                 )}

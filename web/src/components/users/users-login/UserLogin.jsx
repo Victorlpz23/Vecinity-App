@@ -88,7 +88,7 @@ function UserLogin() {
                             width="25px"
                             height="25px"
                             viewBox="0 0 24 24"
-                            stroke-width="1.8"
+                            strokeWidth="1.8"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             color="#809d7b"
@@ -96,15 +96,15 @@ function UserLogin() {
                             <path
                               d="M9 9l4.5 3L18 9M3 13.5h2M1 10.5h4"
                               stroke="#809d7b"
-                              stroke-width="1.8"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             ></path>
                             <path
                               d="M5 7.5V7a2 2 0 012-2h13a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2v-.5"
                               stroke="#809d7b"
-                              stroke-width="1.8"
-                              stroke-linecap="round"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
                             ></path>
                           </svg>
                         </div>
@@ -145,7 +145,7 @@ function UserLogin() {
                             <svg
                               width="30px"
                               height="30px"
-                              stroke-width="1.8"
+                              strokeWidth="1.8"
                               viewBox="0 0 24 24"
                               fill="none"
                               xmlns="http://www.w3.org/2000/svg"
@@ -154,9 +154,9 @@ function UserLogin() {
                               <path
                                 d="M16 12h1.4a.6.6 0 01.6.6v6.8a.6.6 0 01-.6.6H6.6a.6.6 0 01-.6-.6v-6.8a.6.6 0 01.6-.6H8m8 0V8c0-1.333-.8-4-4-4S8 6.667 8 8v4m8 0H8"
                                 stroke="#809d7b"
-                                stroke-width="1.8"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeWidth="1.8"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                               ></path>
                             </svg>
                           </div>
