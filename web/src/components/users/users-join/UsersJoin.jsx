@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 function UsersJoin() {
-  const { user } = useContext(AuthContext);
+  const { user, onReload } = useContext(AuthContext);
   const { register, handleSubmit, setError, formState: { errors } } = useForm({ mode: 'onBlur' });
   const [serverError, setServerError] = useState();
   const navigate = useNavigate();
@@ -15,10 +15,8 @@ function UsersJoin() {
   const onCodeSubmit = (code) => {
     communitiesService.join(code)
       .then((userJoin) => {
-        user.community = userJoin.community;
-        navigate(`/welcome/${user.community}`);
 
-
+        navigate(`/welcome/${userJoin.community}`);
       }).catch((error) => console.error(error));
   };
 

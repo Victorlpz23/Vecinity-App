@@ -41,7 +41,7 @@ module.exports.detail = (req, res, next) => res.json(req.user);
 module.exports.me = (req, res, next) => {
   User.findOne({ email: req.user.email })
     .then((user) => {
-      req.user = user
+      res.status(200).json(user)
     }).catch(next)
 } 
 

@@ -1,11 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthStore.js';
 
 
 
 function WelcomePage() {
-  const { user } = useContext(AuthContext);
+  const { user, onReload } = useContext(AuthContext);
+
+  useEffect(() => {
+    async function fetchUser() {
+      if (user) {
+        await onReload();
+      }
+    }
+    fetchUser();
+  }, []);
 
 
   return (

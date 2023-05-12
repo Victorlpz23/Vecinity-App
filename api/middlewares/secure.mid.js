@@ -15,6 +15,7 @@ module.exports.removeId = (req, res, next) => {
 
 module.exports.auth = (req, res, next) => {
   const token = req.headers.authorization?.split(" ")?.[1];
+  console.log(token)
 
   if (!token) {
     return next(createError(401, "Missing access token"));

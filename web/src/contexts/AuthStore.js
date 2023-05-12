@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import userService from '../services/users';
 
 
 
@@ -19,14 +20,9 @@ function AuthStore({ children }) {
   const navigate = useNavigate();
 
 
-  // useEffect(() => {
-  //   async function fetchUser() {
-  //     if (user) {
-  //       await reloadUser();
-  //     }
-  //   }
-  //   fetchUser();
-  // }, []);
+
+
+
 
   const handleUserChange = (user) => {
     console.log('Updating user context', user);
@@ -40,10 +36,10 @@ function AuthStore({ children }) {
     setUser(user);
   };
 
-  // async function reloadUser() {
-  //   const profile = await userService.get('me');
-  //   handleUserChange({ ...profile, token: user.token });
-  // }
+  async function reloadUser() {
+    const profile = await userService.get('me');
+    handleUserChange({ ...profile, token: user.token });
+  }
 
 
 
@@ -56,7 +52,7 @@ function AuthStore({ children }) {
 
   return (
     <>
-      <AuthContext.Provider value={{ user, onUserChange: handleUserChange, logout }}>
+      <AuthContext.Provider value={{ user, onReload: reloadUser, onUserChange: handleUserChange, logout }}>
         {children}
       </AuthContext.Provider>
     </>
