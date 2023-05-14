@@ -5,7 +5,7 @@ const createError = require('http-errors');
 
 module.exports.exists = (req, res, next) => {
   const userId = req.params.userId || req.params.id 
-  console.log(userId)
+  
   if (userId === 'me') {
     if (req.user) {
       next();

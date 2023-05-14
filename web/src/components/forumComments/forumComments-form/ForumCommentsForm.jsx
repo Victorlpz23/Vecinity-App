@@ -22,7 +22,7 @@ function ForumCommentsForm({ onCommentCreated }) {
       <form onSubmit={handleSubmit(onCommentSubmit)}>
         <div className="flex flex-col justify-center w-90 m-6 lg:m-20 md:mx-16 mb-4 border border-green rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
           <div className="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
-            <label for="comment" className="sr-only">
+            <label htmlFor="comment" className="sr-only">
               Your comment
             </label>
             <input

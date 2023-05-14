@@ -5,6 +5,7 @@ import DarkModeToggle from "../../dark-mode/DarkModeToggle";
 
 function UserSettings() {
   const { user, logout } = useContext(AuthContext);
+  const userCommunity = user?.community?.id || user?.community
 
   return (
     <div className="pb-60 flex flex-col items-center">
@@ -12,7 +13,7 @@ function UserSettings() {
         <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400 items-center">
           <li className="mr-2">
             <Link
-              to={`/communities/${user?.community}/users/${user?.id}/account`}
+              to={`/communities/${userCommunity}/users/${user?.id}/account`}
               className="inline-flex p-4 border-b-2 border-transparent rounded-t-lg hover:text-orange hover:border-orange dark:hover:text-gray-300 group"
             >
               <svg
@@ -23,9 +24,9 @@ function UserSettings() {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
               Profile
@@ -34,7 +35,7 @@ function UserSettings() {
 
           <li className="mr-2">
             <Link
-              to={`/communities/${user?.community}/users/${user?.id}/settings`}
+              to={`/communities/${userCommunity}/users/${user?.id}/settings`}
               className="inline-flex p-4 border-b-2 border-transparent rounded-t-lg hover:text-orange hover:border-orange dark:hover:text-gray-300 group"
             >
               <svg
