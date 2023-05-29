@@ -5,7 +5,7 @@
   <h1>Vecinity App</h1>
   
   <p>
-    ¡Bienvenido a Vecinity App! Esta es una aplicación de gestión de comunidades de vecinos construida con una arquitectura basada en REST API utilizando Node.js y React.
+    ¡Bienvenido a Vecinity App! Esta es una aplicación de gestión de comunidades de vecinos construida con una arquitectura basada en REST API utilizando Node.js, React y TailwindCss.
   </p>
   
   <h2>Funcionalidades</h2>
