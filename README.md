@@ -1,9 +1,6 @@
-<!DOCTYPE html>
+
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Vecinity App</title>
-</head>
+
 <body>
   <h1>Vecinity App</h1>
   
