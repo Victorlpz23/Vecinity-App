@@ -16,7 +16,7 @@ function ForumTopicItem({ forumTopic, communityId }) {
             </div>
             <div className="flex flex-row justify-between mx-8 mb-4">
               <div className="flex flex-row">
-                <img className='w-10 h-10 rounded-full' src={forumTopic.author.imageUrl} alt='user img'/>
+                <img className='w-10 h-10 rounded-full' src={forumTopic.author.imageUrl} alt='userimg'/>
                 <h5 className="ms-2 mt-2.5 font-bold text-green leading-tight text-center tracking-tight md:text-2xl dark:text-white">
                   {forumTopic.author.name}
                 </h5>

@@ -13,9 +13,11 @@ require('./config/db.config');
 
 
 const app = express();
+app.use(express.static(__dirname + "/public"))
 app.use(cors)
 app.use(helmet());
 app.use(logger('dev'));
+
 
 
 app.use(express.json());
