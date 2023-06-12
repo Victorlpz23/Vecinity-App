@@ -13,7 +13,7 @@ function CommunityHome() {
   return (
     <>
       <PageLayout title="My Community">
-      <div className="grid grid-cols-2 gap-8 justify-items-center lg:grid-cols-3 md:grid-cols-2 lg: pt-16">
+      <div className="grid grid-cols-2 gap-4 justify-items-center lg:grid-cols-3 md:grid-cols-2 lg: pt-16">
         <NavLink to={`/communities/${userCommunity}/claims`}>
           <div>
           <svg className='hover:animate-spin' width="80px" height="80px" strokeWidth="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#809d7b"><path d="M12 11.5v5M12 7.51l.01-.011M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="#809d7b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path></svg>

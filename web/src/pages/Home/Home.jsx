@@ -290,7 +290,7 @@ function Home() {
               <h3 className="mb-1 text-2xl font-bold dark:text-white">
                 <Link to="#">Víctor López Arellano</Link>
               </h3>
-              <p className='dark:text-white'>Junior Full Stack Developer</p>
+              <p className='dark:text-white'>Full Stack Developer</p>
               <ul className="flex justify-center items-center mt-3 space-x-4">
                 <li>
                   <Link to="https://www.linkedin.com/in/victorlpz23/" className="text-[#39569c] hover:text-gray-900 dark:hover:text-white">
@@ -309,7 +309,7 @@ function Home() {
               <h3 className="mb-1 text-2xl font-bold tracking-tight dark:text-white">
                 <Link to="#">Ana Gutiérrez Ruiz</Link>
               </h3>
-              <p className='dark:text-white'>Junior Full Stack Developer</p>
+              <p className='dark:text-white'>Full Stack Developer</p>
               <ul className="flex justify-center items-center mt-3 space-x-4">
                 <li>
                   <Link to="https://www.linkedin.com/in/ana-gutierrezruiz/" className="text-[#39569c] hover:text-gray-900 dark:hover:text-white">
@@ -328,7 +328,7 @@ function Home() {
               <h3 className="mb-1 text-2xl font-bold tracking-tight dark:text-white">
                 <Link to="#">Alex Garrido Baldrich</Link>
               </h3>
-              <p className='dark:text-white'>Junior Full Stack Developer</p>
+              <p className='dark:text-white'>Full Stack Developer</p>
               <ul className="flex justify-center items-center mt-3 space-x-4">
                 <li>
                   <Link to="https://www.linkedin.com/in/alex-garrido-baldrich-07b29aa9/" className="text-[#39569c] hover:text-gray-900 dark:hover:text-white">

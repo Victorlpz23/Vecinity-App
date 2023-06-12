@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <>
       <nav className="bg-white border-gray-500 dark:bg-gray-900 sticky top-0 z-50 w-full">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
           <Link to="/" className="flex items-center">
             <img src="/images/Vecinity-logo.png" className="h-12 mr-3" alt="Vecinity Logo" />
             <span className="self-center text-3xl md:text-4xl font-semibold whitespace-nowrap animate-text bg-gradient-to-r from-orange via-orange to-green bg-clip-text text-transparent">Vecinity App</span>
