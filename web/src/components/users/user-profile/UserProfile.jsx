@@ -28,7 +28,7 @@ function UserProfile() {
         <div className="w-full h-52 flex items-center justify-center">
           <img
             className="w-32 h-32 rounded-full object-cover"
-            src="https://imglarger.com/Images/before-after/ai-image-enlarger-1-after-2.jpg"
+            src={user?.imageUrl}
             alt="Userprofilepicture"
           />
         </div>

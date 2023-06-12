@@ -6,15 +6,15 @@ const createError = require('http-errors');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
 const secure = require('./middlewares/secure.mid');
-const cors = require('./config/cors.config')
+const cors = require('./config/cors.config');
 
 // Load configuration
 require('./config/db.config');
 
 
 const app = express();
-app.use(express.static(__dirname + "/public"))
-app.use(cors)
+app.use(express.static(__dirname + "/public"));
+app.use(cors);
 app.use(helmet());
 app.use(logger('dev'));
 
@@ -27,6 +27,10 @@ app.use(secure.removeId);
 
 const api = require('./config/routes.config');
 app.use('/api/v1', api);
+
+app.get("/*", (req, res) => {
+  res.sendFile(`${__dirname}/public/index.html`);
+});
 
 // Error Handling
 app.use((req, res, next) => next(createError(404, 'Route not found')));

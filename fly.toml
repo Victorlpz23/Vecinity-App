@@ -12,11 +12,9 @@ processes = []
 [build]
 
 [env]
-  API_URL="http://localhost:3001/api/v1"
-  WEB_URL="http://localhost:3000/api/v1"
-  CORS_ORIGIN="http://localhost:3000"
+  PORT = 3000
   MAX_SESSION_AGE=604800
-  USER_CONFIRMATION_REQUIRED="false"
+  USER_CONFIRMATION_REQUIRED="true"
 
 [experimental]
   auto_rollback = true
