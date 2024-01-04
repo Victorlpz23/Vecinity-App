@@ -27,7 +27,7 @@
 
   <h2>Autores</h2>
   <p>
-    Desarrollado por Víctor López, Ana Gutierrez y Alex Garrido.
+    Desarrollado por Ana Gutierrez, Víctor López y Alex Garrido.
   </p>
   
   <h2>Licencia</h2>
